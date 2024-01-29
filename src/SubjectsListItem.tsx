@@ -1,5 +1,3 @@
-import Subject from "./Subject";
-
 interface ListItemProps {
     subjectName: string;
 }
