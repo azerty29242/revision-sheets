@@ -1,3 +1,5 @@
+import Subject from "./Subject";
+
 interface ListItemProps {
     subjectName: string;
 }
@@ -5,7 +7,9 @@ interface ListItemProps {
 function ListItem({ subjectName }: ListItemProps) {
     return (
         <>
-            <a href="javascript:void(0)">{subjectName}</a>
+            <button className="list-group-item list-group-item-action">
+                {subjectName}
+            </button>
         </>
     );
 }
