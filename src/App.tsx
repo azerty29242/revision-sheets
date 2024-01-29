@@ -7,8 +7,7 @@ function App() {
 
     return (
         <div className="container">
-            <h1>Fiches bristol</h1>
-            <h2>Matières</h2>
+            <h1>Matières</h1>
             <div className="list-group">
                 {subjects.map((subject, index) => {
                     return (
