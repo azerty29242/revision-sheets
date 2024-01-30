@@ -1,12 +1,64 @@
 {
   "Histoire": {
-    "H1 - Civils et militaires dans la première guerre mondiale (1914-1918)": [
-      "Le génocide arménien",
-      "Les soldats pendant la IGM",
-      "Les civils pendant la IGM",
-      "Révolution russe de 1917",
-      "Bilan de la guerre"
-    ],
+    "H1 - Civils et militaires dans la première guerre mondiale (1914-1918)": {
+      "Le génocide arménien": {
+        "Introduction": [
+          {
+            "type": "paragraph",
+            "contents": [
+              "Contexte : Guerre de 1914-1918, l'Entente contre les Empires centraux (dont Empire ottoman).",
+              "Guerre totale avec une tragédie pour des civils de l’Empire ottoman."
+            ]
+          }
+        ],
+
+        "1 - Présentation générale": [
+          {
+            "type": "list",
+            "contents": [
+              "Où : Est de l’Empire ottoman",
+              "Quand : 1915-1916",
+              "Qui : Empire Ottoman, minorité ethnique et religieuse arménienne (hommes, femmes, enfants)",
+              "Pourquoi : prétexte : les Arméniens sont des traîtres",
+              "Cause réelle : haîne, racisme"
+            ]
+          }
+        ],
+        "2 - Les méthodes du génocide": [
+          {
+            "type": "paragraph",
+            "contents": [
+              "Fusillades, pendaisons, noyades, tortures, déportation (longues marches forcées), camps.",
+              "C’est bien un génocide car l’extermination est programmée, organisée par l’Etat ottoman. Plus d’1 million (=2/3) d’Arméniens seront assassinés seulement pour des raisons ethniques et religieuses."
+            ]
+          }
+        ],
+        "Conclusion": [
+          {
+            "type": "paragraph",
+            "contents": [
+              "8 millions de civils sont morts pendant IGM dont plus 1 million par génocide."
+            ]
+          }
+        ]
+      },
+      "Les soldats pendant la IGM": {
+        "Contexte": "1ère guerre mondiale",
+        "1 - Bonjour": "Au revoir"
+      },
+      "Les civils pendant la IGM": {
+        "Contexte": "1ère guerre mondiale",
+        "1 - Bonjour": "Au revoir"
+      },
+      "Révolution russe de 1917": {
+        "Contexte": "1ère guerre mondiale",
+        "1 - Bonjour": "Au revoir"
+      },
+      "Bilan de la guerre": {
+        "Contexte": "1ère guerre mondiale",
+        "1 - Bonjour": "Au revoir"
+      }
+    },
     "H2 - Démocraties fragilisées et expériences totalitaires dans l'europe de l'entre-deux-guerres (1919-1939)": [
       "Le régime totalitaire de Staline en URSS",
       "Le régime totalitaire nazi en Allemagne (1933-1945)",
