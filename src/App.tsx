@@ -1,11 +1,16 @@
 import { useState } from "react";
-import SubjectList from "./SubjectList";
-import SheetList from "./SheetList";
+import ListGroup from "./ListGroup";
+import revisionSheets from "./data/RevsionSheets.json";
+
 
 const App = () => {
   const [currentSubject, setCurrentSubject] = useState("");
 
-  return (
+
+  const subjects = Object.keys(revisionSheets);
+
+
+  /*return (
     <div className="container">
       {currentSubject === "" ? (
         <SubjectList onSubjectSelect={setCurrentSubject}></SubjectList>
@@ -18,7 +23,12 @@ const App = () => {
         ></SheetList>
       )}
     </div>
-  );
+  );*/
+  return (
+    <div className="container">
+      <ListGroup items={subjects}></ListGroup>
+    </div>
+  )
 };
 
 export default App;
