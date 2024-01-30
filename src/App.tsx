@@ -1,10 +1,10 @@
-import { useState } from "react";
+//import { useState } from "react";
 import ListGroup from "./ListGroup";
 import revisionSheets from "./data/RevsionSheets.json";
 
 
 const App = () => {
-  const [currentSubject, setCurrentSubject] = useState("");
+  //const [currentSubject, setCurrentSubject] = useState("");
 
 
   const subjects = Object.keys(revisionSheets);
