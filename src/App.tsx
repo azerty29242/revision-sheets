@@ -1,25 +1,24 @@
-// import { useState } from "react";
-import SubjectsListItem from "./SubjectsListItem";
-import "./App.css";
+import { useState } from "react";
+import SubjectList from "./SubjectList";
+import SheetList from "./SheetList";
 
-function App() {
-    const subjects = ["Histoire", "Géographie"];
+const App = () => {
+  const [currentSubject, setCurrentSubject] = useState("");
 
-    return (
-        <div className="container">
-            <h1>Matières</h1>
-            <div className="list-group">
-                {subjects.map((subject, index) => {
-                    return (
-                        <SubjectsListItem
-                            key={index}
-                            subjectName={subject}
-                        ></SubjectsListItem>
-                    );
-                })}
-            </div>
-        </div>
-    );
-}
+  return (
+    <div className="container">
+      {currentSubject === "" ? (
+        <SubjectList onSubjectSelect={setCurrentSubject}></SubjectList>
+      ) : (
+        <SheetList
+          subject={currentSubject}
+          onBackButtonClick={() => {
+            setCurrentSubject("");
+          }}
+        ></SheetList>
+      )}
+    </div>
+  );
+};
 
 export default App;
