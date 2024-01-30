@@ -59,26 +59,26 @@
         "1 - Bonjour": "Au revoir"
       }
     },
-    "H2 - Démocraties fragilisées et expériences totalitaires dans l'europe de l'entre-deux-guerres (1919-1939)": [
-      "Le régime totalitaire de Staline en URSS",
-      "Le régime totalitaire nazi en Allemagne (1933-1945)",
-      "Le Front populaire"
-    ],
-    "H3 - La seconde guerre mondiale, une guerre d'anéantissement (1939-1945)": [
-      "Pourquoi peut-on dire que la IIGM est une guerre d’anéantissement ?",
-      "Qu’est-ce que le génocide juif et tzigane ?"
-    ],
-    "H4 - La france défaite et occupée (1940-1944): Régime de Vichy, collaboration, resistance": [
-      "Qu’est-ce que le régime de Vichy ? (1940-1944)",
-      "Comment les résistances se sont-elles opposées au nazisme et à Vichy ?"
-    ]
+    "H2 - Démocraties fragilisées et expériences totalitaires dans l'europe de l'entre-deux-guerres (1919-1939)": {
+      "Le régime totalitaire de Staline en URSS": {},
+      "Le régime totalitaire nazi en Allemagne (1933-1945)": {},
+      "Le Front populaire": {}
+    },
+    "H3 - La seconde guerre mondiale, une guerre d'anéantissement (1939-1945)": {
+      "Pourquoi peut-on dire que la IIGM est une guerre d’anéantissement ?": {},
+      "Qu’est-ce que le génocide juif et tzigane ?": {}
+    },
+    "H4 - La france défaite et occupée (1940-1944): Régime de Vichy, collaboration, resistance": {
+      "Qu’est-ce que le régime de Vichy ? (1940-1944)": {},
+      "Comment les résistances se sont-elles opposées au nazisme et à Vichy ?": {}
+    }
   },
   "Géographie": {
-    "G1 - Les aires urbaines: une nouvelle géographie d'une france mondialisée": [
-      "Comment évoluent les aires urbaines françaises sous l’influence de la mondialisation ?"
-    ],
-    "G2 - Les espaces productifs et leur évolutions": [
-      "Les espaces productifs de service"
-    ]
+    "G1 - Les aires urbaines: une nouvelle géographie d'une france mondialisée": {
+      "Comment évoluent les aires urbaines françaises sous l’influence de la mondialisation ?": {}
+    },
+    "G2 - Les espaces productifs et leur évolutions": {
+      "Les espaces productifs de service": {}
+    }
   }
 }
