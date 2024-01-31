@@ -17,14 +17,15 @@ const ListGroup = ({
   onItemSelect,
 }: Props) => {
   return (
+    <>
+    <h3>{header}</h3>
+    {backButton && <BackButton onClick={onBackButtonClick}></BackButton>}
     <ul className="list-group">
-      <h3>{header}</h3>
-      {backButton && <BackButton onClick={onBackButtonClick}></BackButton>}
       {items.map((item, index) => {
         return (
           <li
             key={index}
-            className="icon-link icon-link-hover"
+            className="list-group-item list-group-item-action"
             onClick={() => onItemSelect(item)}
           >
             {item}
@@ -32,6 +33,7 @@ const ListGroup = ({
         );
       })}
     </ul>
+    </>
   );
 };
 
