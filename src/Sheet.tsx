@@ -6,26 +6,39 @@ interface Props {
   onBackButtonClick: () => void;
 }
 
+// interface Special {
+//   type: string;
+//   info: string;
+// }
+
 interface Paragraph {
   type: string;
   contents: Array<string>;
+  // special: Array<Special>;
 }
 
 const ListGroup = ({ contents, header, onBackButtonClick }: Props) => {
   return (
-    <div className="d-flex flex-column gap-2">
+    <div className="d-flex flex-column gap-4">
       <h3 className="text-danger">{header}</h3>
       <BackButton onClick={onBackButtonClick}></BackButton>
       {Object.entries(contents).map(([section, paragraphs]) => {
         return (
-          <>
+          <div>
             <h4 className="text-success">{section}</h4>
             {paragraphs.map((paragraph: Paragraph) => {
+              // let specials = [];
+              if ("special" in paragraph) {
+                // specials = paragraph.special;
+              }
               return (
                 <div className="d-flex flex-column">
                   {paragraph.type === "paragraph" && (
                     <>
                       {paragraph.contents.map((line) => {
+                        // specials.forEach((special) => {
+                        //   if (line.includes(special))
+                        // })
                         return <span>{line}</span>;
                       })}
                     </>
@@ -47,7 +60,7 @@ const ListGroup = ({ contents, header, onBackButtonClick }: Props) => {
                 </div>
               );
             })}
-          </>
+          </div>
         );
       })}
     </div>
