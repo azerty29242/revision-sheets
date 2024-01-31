@@ -1,4 +1,4 @@
-import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
+// import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
 import BackButton from "./BackButton";
 
 interface Props {
@@ -17,24 +17,21 @@ const ListGroup = ({
   onItemSelect,
 }: Props) => {
   return (
-    <div className="d-flex flex-column">
+    <ul className="list-group">
       <h3>{header}</h3>
       {backButton && <BackButton onClick={onBackButtonClick}></BackButton>}
       {items.map((item, index) => {
         return (
-          <a
+          <li
             key={index}
             className="icon-link icon-link-hover"
             onClick={() => onItemSelect(item)}
           >
             {item}
-            <svg className="bi" aria-hidden="true">
-              <use xlinkHref={bootstrapIcons + "#arrow-right"}></use>
-            </svg>
-          </a>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 };
 
