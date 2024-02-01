@@ -1,7 +1,7 @@
 {
   "Histoire": {
     "Première Guerre Mondiale": {
-      "Le génocide arménien": [
+      "Le Génocide Arménien": [
         {
           "title": "Introduction",
           "paragraphs": [
@@ -11,13 +11,67 @@
                 [
                   {
                     "type": "normal",
-                    "contents": "Contexte : Guerre de 1914-1918, l'Entente contre les Empires centraux (dont Empire ottoman)."
+                    "contents": "Contexte : "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "Guerre de 1914-1918",
+                    "color": "green"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": ", l'"
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "Entente",
+                    "definition": "Alliance de la France, la Grande-Bretagne et la Russie"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " contre les "
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "Empires centraux",
+                    "definition": "Alliance de l'Allemagne, l'Autriche-Hongrie et l'Empire Ottoman"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " (dont l'"
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "Empire Ottoman",
+                    "definition": "Empire Turc. Avec le temps, cet empire est devenu la Turquie"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": ")."
                   }
                 ],
                 [
                   {
                     "type": "normal",
-                    "contents": "Guerre totale avec une tragédie pour des civils de l’Empire ottoman."
+                    "contents": "Guerre totale avec une "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "tragédie",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " pour "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "des civils",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " de l'Empire Ottoman."
                   }
                 ]
               ]
@@ -32,32 +86,62 @@
               "lines": [
                 [
                   {
+                    "type": "highlighted",
+                    "contents": "Où",
+                    "color": "yellow"
+                  },
+                  {
                     "type": "normal",
-                    "contents": "Où : Est de l’Empire ottoman"
+                    "contents": ": Est de l'Empire ottoman"
                   }
                 ],
                 [
                   {
+                    "type": "highlighted",
+                    "contents": "Quand",
+                    "color": "yellow"
+                  },
+                  {
                     "type": "normal",
-                    "contents": "Quand : 1915-1916"
+                    "contents": " : "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "1915-1916",
+                    "color": "green"
                   }
                 ],
                 [
                   {
+                    "type": "highlighted",
+                    "contents": "Qui",
+                    "color": "yellow"
+                  },
+                  {
                     "type": "normal",
-                    "contents": "Qui : Empire Ottoman, minorité ethnique et religieuse arménienne (hommes, femmes, enfants)"
+                    "contents": " : Empire Ottoman, minorité ethnique et religieuse arménienne (hommes, femmes, enfants)"
                   }
                 ],
                 [
                   {
+                    "type": "highlighted",
+                    "contents": "Pourquoi",
+                    "color": "yellow"
+                  },
+                  {
                     "type": "normal",
-                    "contents": "Pourquoi : prétexte : les Arméniens sont des traîtres"
+                    "contents": " : prétexte : les Arméniens sont des traîtres"
                   }
                 ],
                 [
                   {
+                    "type": "highlighted",
+                    "contents": "Cause réelle",
+                    "color": "yellow"
+                  },
+                  {
                     "type": "normal",
-                    "contents": "Cause réelle : haîne, racisme"
+                    "contents": " : haîne, racisme"
                   }
                 ]
               ]
@@ -73,13 +157,40 @@
                 [
                   {
                     "type": "normal",
-                    "contents": "Fusillades, pendaisons, noyades, tortures, déportation (longues marches forcées), camps"
+                    "contents": "Fusillades, pendaisons, noyades, tortures, "
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "déportations",
+                    "definition": "Longues marches forcées"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": ", camps"
                   }
                 ],
                 [
                   {
                     "type": "normal",
-                    "contents": "C’est bien un génocide car l’extermination est programmée, organisée par l’Etat ottoman. Plus d’1 million (2/3) d’Arméniens seront assassinés seulement pour des raisons ethniques et religieuses"
+                    "contents": "C'est bien un génocide car "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "l'extermination est programmée, organisée par l'Etat ottoman",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": ". "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "Plus d'1 million (2/3)",
+                    "color": "pink"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " d'Arméniens seront assassinés seulement pour des raisons ethniques et religieuses"
                   }
                 ]
               ]
@@ -94,8 +205,143 @@
               "lines": [
                 [
                   {
+                    "type": "highlighted",
+                    "contents": "8 millions",
+                    "color": "pink"
+                  },
+                  {
                     "type": "normal",
-                    "contents": "8 millions de civils sont morts pendant IGM dont plus 1 million par génocide."
+                    "contents": " de civils sont morts pendant IGM dont plus de "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "1 million",
+                    "color": "pink"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " par "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "génocide",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": "."
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "Les soldats pendant la Première Guerre Mondiale": [
+        {
+          "title": "Introduction",
+          "paragraphs": [
+            {
+              "type": "text",
+              "lines": [
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Contexte : "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "Guerre de 1914-1918",
+                    "color": "green"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": ", l'"
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "Entente",
+                    "definition": "Alliance de la France, la Grande-Bretagne et la Russie"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " contre les "
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "Empires centraux",
+                    "definition": "Alliance de l'Allemagne, l'Autriche-Hongrie et l'Empire Ottoman"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " (dont l'"
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "Empire Ottoman",
+                    "definition": "Empire Turc. Avec le temps, cet empire est devenu la Turquie"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": ")."
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "1 - Les conditions de vie",
+          "paragraphs": [
+            {
+              "type": "list",
+              "lines": [
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Tranchées",
+                    "color": "yellow"
+                  }
+                ],
+                [
+                  {
+                    "type": "defined",
+                    "contents": "Aléa climatiques",
+                    "definition": "Froid, chaleur, boue, ..."
+                  }
+                ],
+                [
+                  {
+                    "type": "defined",
+                    "contents": "Manque d'hygiène",
+                    "definition": "Poux, puces, rats, ..."
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " : « "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "poilus",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " »"
+                  }
+                ],
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Manque des proches",
+                    "color": "yellow"
+                  }
+                ],
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Peur",
+                    "color": "yellow"
                   }
                 ]
               ]

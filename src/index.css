@@ -1,0 +1,39 @@
+.text-bg-blue {
+  background-color: color-mix(in srgb, #0d6efd 50%, white);
+}
+
+.text-bg-indigo {
+  background-color: color-mix(in srgb, #6610f2 50%, white);
+}
+
+.text-bg-purple {
+  background-color: color-mix(in srgb, #6f42c1 50%, white);
+}
+
+.text-bg-pink {
+  background-color: color-mix(in srgb, #d63384 50%, white);
+}
+
+.text-bg-red {
+  background-color: color-mix(in srgb, #dc3545 50%, white);
+}
+
+.text-bg-orange {
+  background-color: color-mix(in srgb, #fd7e14 50%, white);
+}
+
+.text-bg-yellow {
+  background-color: color-mix(in srgb, #ffc107 50%, white);
+}
+
+.text-bg-green {
+  background-color: color-mix(in srgb, #198754 50%, white);
+}
+
+.text-bg-teal {
+  background-color: color-mix(in srgb, #20c997 50%, white);
+}
+
+.text-bg-cyan {
+  background-color: color-mix(in srgb, #0dcaf0 50%, white);
+}

@@ -16,7 +16,10 @@ const displayText = (text: EnhancedText, index: number) => {
     <>
       {text.type === "normal" && <span key={index}>{text.contents}</span>}
       {text.type === "highlighted" && (
-        <span key={index} className={"text-bg-" + text.color}>
+        <span
+          key={index}
+          className={"text-bg-" + text.color + " bg-opacity-50"}
+        >
           {text.contents}
         </span>
       )}
