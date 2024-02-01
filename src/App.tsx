@@ -1,57 +1,96 @@
 import { useState } from "react";
-import ListGroup from "./ListGroup";
-import Sheet from "./Sheet";
-import revisionSheets from "./data/RevsionSheets.json";
+
+import {
+  RevisionSheetsInterface,
+  Category,
+  Sheet,
+  Section,
+} from "./scripts/Interfaces.ts";
+
+import RevisionSheets from "./data/RevisionSheets.json";
+
+import ListGroup from "./components/ListGroup";
+// import RevisionSheet from "./components/RevisionSheet.tsx";
 
 const App = () => {
-  const [currentSubject, setCurrentSubject] = useState("");
-  const [currentCategory, setCurrentCategory] = useState("");
-  const [currentSheet, setCurrentSheet] = useState("");
+  const revisionSheets: { [k: string]: Array<Category> } = Object.fromEntries(
+    (RevisionSheets as RevisionSheetsInterface).subjects.map(
+      ({ name, categories }) => [name, categories]
+    )
+  );
 
-  const subjects = Object.keys(revisionSheets);
+  const [headers, setHeaders] = useState(["Fiches bristol"]);
+  const [currentSubject, setCurrentSubject] = useState({});
+  const [currentCategory, setCurrentCategory] = useState({});
+  const [, setCurrentSheet] = useState({});
+
+  const updateCurrentSubject = (name: string, items: Array<object>) => {
+    setHeaders([...headers, name]);
+    setCurrentSubject(
+      Object.fromEntries(
+        (items as Array<Category>).map(({ name, sheets }) => [name, sheets])
+      )
+    );
+  };
+
+  const updateCurrentCategory = (name: string, items: Array<object>) => {
+    setHeaders([...headers, name]);
+    setCurrentCategory(
+      Object.fromEntries(
+        (items as Array<Sheet>).map(({ name, sections }) => [name, sections])
+      )
+    );
+  };
+
+  const updateCurrentSheet = (name: string, items: Array<object>) => {
+    setHeaders([...headers, name]);
+    setCurrentSheet(items as Array<Section>);
+  };
 
   return (
     <div className="container">
-      {currentSubject === "" && (
+      {headers.length === 1 && (
         <ListGroup
-          items={subjects}
-          header="Fiches bristol"
+          header={headers[0]}
+          items={revisionSheets}
           backButton={false}
           onBackButtonClick={() => {}}
-          onItemSelect={setCurrentSubject}
+          onItemSelect={updateCurrentSubject}
         ></ListGroup>
       )}
-      {currentSubject !== "" && currentCategory === "" && (
+      {headers.length === 2 && (
         <ListGroup
-          header={currentSubject}
-          items={Object.keys(revisionSheets[currentSubject as keyof object])}
+          header={headers[1]}
+          items={currentSubject}
           backButton={true}
-          onBackButtonClick={() => setCurrentSubject("")}
-          onItemSelect={setCurrentCategory}
+          onBackButtonClick={() => {
+            setHeaders(headers.filter((header) => header !== headers[1]));
+          }}
+          onItemSelect={updateCurrentCategory}
         ></ListGroup>
       )}
-      {currentCategory !== "" && currentSheet === "" && (
+      {headers.length === 3 && (
         <ListGroup
-          header={currentCategory}
-          items={Object.keys(
-            revisionSheets[currentSubject as keyof object][currentCategory]
-          )}
+          header={headers[2]}
+          items={currentCategory}
           backButton={true}
-          onBackButtonClick={() => setCurrentCategory("")}
-          onItemSelect={setCurrentSheet}
+          onBackButtonClick={() => {
+            setHeaders(headers.filter((header) => header !== headers[2]));
+          }}
+          onItemSelect={updateCurrentSheet}
         ></ListGroup>
       )}
-      {currentSheet !== "" && (
+      {/* {currentSheet !== "" && (
         <Sheet
-          header={currentSheet}
-          contents={
+          sheet={
             revisionSheets[currentSubject as keyof object][currentCategory][
               currentSheet
             ]
           }
+          header={currentSheet}
           onBackButtonClick={() => setCurrentSheet("")}
         ></Sheet>
-      )}
+      )} */}
     </div>
   );
 };

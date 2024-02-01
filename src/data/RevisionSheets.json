@@ -1,0 +1,57 @@
+{
+  "subjects": [
+    {
+      "name": "Histoire",
+      "categories": [
+        {
+          "name": "H1 - Civils et militaires dans la première guerre mondiale (1914-1918)",
+          "sheets": [
+            {
+              "name": "Le génocide arménien",
+              "sections": [
+                {
+                  "title": "Introduction",
+                  "paragraphs": [
+                    {
+                      "type": "text",
+                      "lines": [
+                        [
+                          {
+                            "type": "defined",
+                            "contents": "Bonjour",
+                            "definition": "En gros, ça veut dire salut"
+                          },
+                          {
+                            "type": "normal",
+                            "contents": ", je m'appelle "
+                          },
+                          {
+                            "type": "highlighted",
+                            "contents": "Jules",
+                            "color": "#f7dc6f"
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Les soldats pendant la IGM"
+            },
+            {
+              "name": "Les civils pendant la IGM"
+            },
+            {
+              "name": "Révolution russe de 1917"
+            },
+            {
+              "name": "Bilan de la guerre"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
