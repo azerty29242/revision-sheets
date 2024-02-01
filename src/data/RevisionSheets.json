@@ -438,7 +438,7 @@
                   },
                   {
                     "type": "highlighted",
-                    "contents": "20 de soldats ",
+                    "contents": "20 millions de soldats ",
                     "color": "pink"
                   },
                   {
@@ -450,6 +450,231 @@
                   {
                     "type": "normal",
                     "contents": "."
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "Les civils pendant la Première Guerre Mondiale": [
+        {
+          "title": "Introduction",
+          "paragraphs": [
+            {
+              "type": "text",
+              "lines": [
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Contexte : "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "Guerre de 1914-1918",
+                    "color": "green"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": ", l'"
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "Entente",
+                    "definition": "Alliance de la France, la Grande-Bretagne et la Russie"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " contre les "
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "Empires centraux",
+                    "definition": "Alliance de l'Allemagne, l'Autriche-Hongrie et l'Empire Ottoman"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": "."
+                  }
+                ],
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "10 millions de soldats sont morts",
+                    "color": "pink"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " mais les "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "civils",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " sont également "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "impliqués",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " dans cette guerre."
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "1 - Acteurs de la guerre",
+          "paragraphs": [
+            {
+              "type": "list",
+              "lines": [
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Participation à l'effort de guerre",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " : femmes ouvrières dans usines d'armement"
+                  }
+                ],
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Mobilisation par la "
+                  },
+                  {
+                    "type": "highlighted-defined",
+                    "contents": "propagande",
+                    "color": "yellow",
+                    "definition": "Le fait de répandre une opinion ou une idéologie en mettant tout en oeuvre pour le faire (publicités, éducation, ...)."
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " (exemple : « versez votre or »)"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "2 - Victimes de la guerre",
+          "paragraphs": [
+            {
+              "type": "list",
+              "lines": [
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Souffrances",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " : pénurie alimentaire, manque des proches"
+                  }
+                ],
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Violences",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": " : bombardements, viols, meurtres"
+                  }
+                ],
+                [
+                  {
+                    "type": "highlighted-link",
+                    "contents": "Génocide Arménien",
+                    "color": "yellow",
+                    "target": "Histoire.Premi%C3%A8re%20Guerre%20Mondiale.Le%20G%C3%A9nocide%20Arm%C3%A9nien"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "paragraphs": [
+            {
+              "type": "text",
+              "lines": [
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Parce que la Première Guerre Mondiale est une "
+                  },
+                  {
+                    "type": "highlighted-defined",
+                    "contents": "guerre totale",
+                    "color": "yellow",
+                    "definition": "Guerre qui concerne à la fois les soldats et les civils"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": ", "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "les civils sont aussi concernés",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " : "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "8 millions de civils",
+                    "color": "pink"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " sont morts, ou ont perdu un membre de leur famille."
+                  }
+                ],
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Attention",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " : Si le sujet est sur la guerre totale :"
+                  }
+                ]
+              ]
+            },
+            {
+              "type": "numbered",
+              "lines": [
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Les soldats",
+                    "color": "yellow"
+                  }
+                ],
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Les civils",
+                    "color": "yellow"
                   }
                 ]
               ]
