@@ -1,8 +1,15 @@
 export interface EnhancedText {
-  type: "normal" | "highlighted" | "defined" | "highlighted-defined";
+  type:
+    | "normal"
+    | "highlighted"
+    | "defined"
+    | "link"
+    | "highlighted-defined"
+    | "highlighted-link";
   contents: string;
   color?: string;
   definition?: string;
+  target?: string;
 }
 
 export interface Paragraph {

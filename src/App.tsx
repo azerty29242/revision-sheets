@@ -1,19 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import RevisionSheets from "./data/RevisionSheets.json";
 
 import ListGroup from "./components/ListGroup";
 import SheetView from "./components/SheetView.tsx";
 
+interface Data {
+  [key: string]: Data;
+}
+
 const App = () => {
   const revisionSheets: object = RevisionSheets;
 
-  const [headers, setHeaders] = useState(["Fiches bristol"]);
-  const [data, setData] = useState([revisionSheets]);
+  const initialHeaders: string[] = ["Fiches bristol"];
+  const initialData: Data[] = [revisionSheets as Data];
 
-  const onItemSelect = (name: string, items: Array<object>) => {
+  const params = new URLSearchParams(window.location.search);
+
+  let providedHeaders: string[] = [];
+
+  if (params.has("location")) {
+    const locationString = params.get("location");
+    if (locationString) {
+      providedHeaders = locationString.split(".");
+    }
+  }
+
+  providedHeaders.every((header, index) => {
+    if (initialData[index][header]) {
+      initialData.push(initialData[index][header]);
+      initialHeaders.push(header);
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  const [headers, setHeaders] = useState<string[]>(initialHeaders);
+  const [data, setData] = useState<Data[]>(initialData);
+
+  const onItemSelect = (name: string, items: object) => {
     setHeaders([...headers, name]);
-    setData([...data, items]);
+    setData([...data, items as Data]);
   };
 
   const goBack = () => {
@@ -22,6 +50,35 @@ const App = () => {
     );
     setData(data.filter((part) => part !== data[data.length - 1]));
   };
+
+  useEffect(() => {
+    const baseLocation = location.origin + location.pathname + "?location=";
+
+    const url =
+      headers.length === 1
+        ? location.origin + location.pathname
+        : baseLocation + encodeURIComponent(headers.slice(1).join("."));
+
+    if (url !== location.href) {
+      window.history.pushState(
+        {},
+        `Fiches bristol - ${headers[headers.length - 1]}`,
+        url
+      );
+    }
+  });
+
+  useEffect(() => {
+    const handlePopState = () => {
+      window.location.reload();
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
 
   return (
     <div className="container">

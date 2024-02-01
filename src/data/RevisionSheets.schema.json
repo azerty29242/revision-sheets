@@ -38,7 +38,9 @@
                                     "normal",
                                     "highlighted",
                                     "defined",
-                                    "highlighted-defined"
+                                    "link",
+                                    "highlighted-defined",
+                                    "highlighted-link"
                                   ],
                                   "default": "normal"
                                 },
@@ -95,6 +97,22 @@
                                   "if": {
                                     "properties": {
                                       "type": {
+                                        "const": "link"
+                                      }
+                                    }
+                                  },
+                                  "then": {
+                                    "properties": {
+                                      "target": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "if": {
+                                    "properties": {
+                                      "type": {
                                         "const": "highlighted-defined"
                                       }
                                     }
@@ -117,6 +135,37 @@
                                         ]
                                       },
                                       "definition": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "if": {
+                                    "properties": {
+                                      "type": {
+                                        "const": "highlighted-link"
+                                      }
+                                    }
+                                  },
+                                  "then": {
+                                    "properties": {
+                                      "color": {
+                                        "type": "string",
+                                        "enum": [
+                                          "blue",
+                                          "indigo",
+                                          "purple",
+                                          "pink",
+                                          "red",
+                                          "orange",
+                                          "yellow",
+                                          "green",
+                                          "teal",
+                                          "cyan"
+                                        ]
+                                      },
+                                      "target": {
                                         "type": "string"
                                       }
                                     }
