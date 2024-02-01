@@ -16,17 +16,31 @@ const displayText = (text: EnhancedText, index: number) => {
     <>
       {text.type === "normal" && <span key={index}>{text.contents}</span>}
       {text.type === "highlighted" && (
-        <span
-          key={index}
-          className={"text-bg-" + text.color + " bg-opacity-50"}
-        >
+        <span key={index} className={"text-bg-" + text.color}>
           {text.contents}
         </span>
       )}
       {text.type === "defined" && (
         <a
           key={index}
-          className="btn btn-link border-0 p-0 m-0 align-baseline"
+          className="btn btn-link border-0 p-0 m-0 user-select-auto align-baseline text-decoration-none rounded-0"
+          tabIndex={0}
+          role="button"
+          data-bs-toggle="popover"
+          data-bs-trigger="focus"
+          data-bs-title={text.contents}
+          data-bs-content={text.definition}
+        >
+          {text.contents}
+        </a>
+      )}
+      {text.type === "highlighted-defined" && (
+        <a
+          key={index}
+          className={
+            "btn btn-link border-0 p-0 m-0 user-select-auto align-baseline text-decoration-none rounded-0 d-inline text-bg-" +
+            text.color
+          }
           tabIndex={0}
           role="button"
           data-bs-toggle="popover"

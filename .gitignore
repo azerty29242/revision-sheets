@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+RawSheets.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

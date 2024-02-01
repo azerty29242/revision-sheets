@@ -1,5 +1,5 @@
 export interface EnhancedText {
-  type: "normal" | "highlighted" | "defined";
+  type: "normal" | "highlighted" | "defined" | "highlighted-defined";
   contents: string;
   color?: string;
   definition?: string;

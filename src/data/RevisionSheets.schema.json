@@ -34,55 +34,95 @@
                               "properties": {
                                 "type": {
                                   "type": "string",
-                                  "enum": ["normal", "highlighted", "defined"],
+                                  "enum": [
+                                    "normal",
+                                    "highlighted",
+                                    "defined",
+                                    "highlighted-defined"
+                                  ],
                                   "default": "normal"
                                 },
                                 "contents": {
                                   "type": "string"
                                 }
                               },
-                              "if": {
-                                "properties": {
-                                  "type": {
-                                    "const": "highlighted"
-                                  }
-                                }
-                              },
-                              "then": {
-                                "properties": {
-                                  "color": {
-                                    "type": "string",
-                                    "enum": [
-                                      "blue",
-                                      "indigo",
-                                      "purple",
-                                      "pink",
-                                      "red",
-                                      "orange",
-                                      "yellow",
-                                      "green",
-                                      "teal",
-                                      "cyan"
-                                    ]
-                                  }
-                                }
-                              },
-                              "else": {
-                                "if": {
-                                  "properties": {
-                                    "type": {
-                                      "const": "defined"
+                              "allOf": [
+                                {
+                                  "if": {
+                                    "properties": {
+                                      "type": {
+                                        "const": "highlighted"
+                                      }
+                                    }
+                                  },
+                                  "then": {
+                                    "properties": {
+                                      "color": {
+                                        "type": "string",
+                                        "enum": [
+                                          "blue",
+                                          "indigo",
+                                          "purple",
+                                          "pink",
+                                          "red",
+                                          "orange",
+                                          "yellow",
+                                          "green",
+                                          "teal",
+                                          "cyan"
+                                        ]
+                                      }
                                     }
                                   }
                                 },
-                                "then": {
-                                  "properties": {
-                                    "definition": {
-                                      "type": "string"
+                                {
+                                  "if": {
+                                    "properties": {
+                                      "type": {
+                                        "const": "defined"
+                                      }
+                                    }
+                                  },
+                                  "then": {
+                                    "properties": {
+                                      "definition": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "if": {
+                                    "properties": {
+                                      "type": {
+                                        "const": "highlighted-defined"
+                                      }
+                                    }
+                                  },
+                                  "then": {
+                                    "properties": {
+                                      "color": {
+                                        "type": "string",
+                                        "enum": [
+                                          "blue",
+                                          "indigo",
+                                          "purple",
+                                          "pink",
+                                          "red",
+                                          "orange",
+                                          "yellow",
+                                          "green",
+                                          "teal",
+                                          "cyan"
+                                        ]
+                                      },
+                                      "definition": {
+                                        "type": "string"
+                                      }
                                     }
                                   }
                                 }
-                              }
+                              ]
                             }
                           }
                         }

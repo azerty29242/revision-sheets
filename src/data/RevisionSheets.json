@@ -206,12 +206,12 @@
                 [
                   {
                     "type": "highlighted",
-                    "contents": "8 millions",
+                    "contents": "8 millions de civils sont morts",
                     "color": "pink"
                   },
                   {
                     "type": "normal",
-                    "contents": " de civils sont morts pendant IGM dont plus de "
+                    "contents": " pendant IGM dont plus de "
                   },
                   {
                     "type": "highlighted",
@@ -274,16 +274,7 @@
                   },
                   {
                     "type": "normal",
-                    "contents": " (dont l'"
-                  },
-                  {
-                    "type": "defined",
-                    "contents": "Empire Ottoman",
-                    "definition": "Empire Turc. Avec le temps, cet empire est devenu la Turquie"
-                  },
-                  {
-                    "type": "normal",
-                    "contents": ")."
+                    "contents": "."
                   }
                 ]
               ]
@@ -342,6 +333,123 @@
                     "type": "highlighted",
                     "contents": "Peur",
                     "color": "yellow"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "2 - Les combats",
+          "paragraphs": [
+            {
+              "type": "text",
+              "lines": [
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Exemple de la "
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "Bataille de la Somme",
+                    "definition": "En 1916, bataille ayant opposé les Anglais et les Allemands pour soulager les français à Verdun"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " :"
+                  }
+                ]
+              ]
+            },
+            {
+              "type": "list",
+              "lines": [
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Pilonnage à l'artillerie lourde pendant plusieurs jours, puis offensive"
+                  }
+                ],
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "19 000 morts",
+                    "color": "pink"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " morts côté anglais "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "dès le 1er jour",
+                    "color": "green"
+                  }
+                ],
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Guerre industrielle",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " avec des "
+                  },
+                  {
+                    "type": "defined",
+                    "contents": "armes nouvelles",
+                    "definition": "Obus, tanks, ..."
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " et donc, meurtrière"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "paragraphs": [
+            {
+              "type": "text",
+              "lines": [
+                [
+                  {
+                    "type": "highlighted",
+                    "contents": "Bilan de la guerre",
+                    "color": "yellow"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": " : "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "10 millions de soldats tués",
+                    "color": "pink"
+                  },
+                  {
+                    "type": "normal",
+                    "contents": ", "
+                  },
+                  {
+                    "type": "highlighted",
+                    "contents": "20 de soldats ",
+                    "color": "pink"
+                  },
+                  {
+                    "type": "highlighted-defined",
+                    "contents": "blessés",
+                    "color": "pink",
+                    "definition": "Gueules cassées, invalides, traumatisés, ..."
+                  },
+                  {
+                    "type": "normal",
+                    "contents": "."
                   }
                 ]
               ]
