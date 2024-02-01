@@ -27,6 +27,7 @@ const displayText = (text: EnhancedText, index: number) => {
         <button
           key={index}
           className="btn btn-link border-0 p-0 m-0 align-baseline"
+          role="button"
           data-bs-toggle="popover"
           data-bs-trigger="focus"
           data-bs-title={text.contents}
