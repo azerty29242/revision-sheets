@@ -1,57 +1,108 @@
 {
-  "subjects": [
-    {
-      "name": "Histoire",
-      "categories": [
+  "Histoire": {
+    "Première Guerre Mondiale": {
+      "Le génocide arménien": [
         {
-          "name": "H1 - Civils et militaires dans la première guerre mondiale (1914-1918)",
-          "sheets": [
+          "title": "Introduction",
+          "paragraphs": [
             {
-              "name": "Le génocide arménien",
-              "sections": [
-                {
-                  "title": "Introduction",
-                  "paragraphs": [
-                    {
-                      "type": "text",
-                      "lines": [
-                        [
-                          {
-                            "type": "defined",
-                            "contents": "Bonjour",
-                            "definition": "En gros, ça veut dire salut"
-                          },
-                          {
-                            "type": "normal",
-                            "contents": ", je m'appelle "
-                          },
-                          {
-                            "type": "highlighted",
-                            "contents": "Jules",
-                            "color": "#f7dc6f"
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
+              "type": "text",
+              "lines": [
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Contexte : Guerre de 1914-1918, l'Entente contre les Empires centraux (dont Empire ottoman)."
+                  }
+                ],
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Guerre totale avec une tragédie pour des civils de l’Empire ottoman."
+                  }
+                ]
               ]
-            },
+            }
+          ]
+        },
+        {
+          "title": "1 - Présentation générale",
+          "paragraphs": [
             {
-              "name": "Les soldats pendant la IGM"
-            },
+              "type": "list",
+              "lines": [
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Où : Est de l’Empire ottoman"
+                  }
+                ],
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Quand : 1915-1916"
+                  }
+                ],
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Qui : Empire Ottoman, minorité ethnique et religieuse arménienne (hommes, femmes, enfants)"
+                  }
+                ],
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Pourquoi : prétexte : les Arméniens sont des traîtres"
+                  }
+                ],
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Cause réelle : haîne, racisme"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "2 - Les méthodes du génocide",
+          "paragraphs": [
             {
-              "name": "Les civils pendant la IGM"
-            },
+              "type": "list",
+              "lines": [
+                [
+                  {
+                    "type": "normal",
+                    "contents": "Fusillades, pendaisons, noyades, tortures, déportation (longues marches forcées), camps"
+                  }
+                ],
+                [
+                  {
+                    "type": "normal",
+                    "contents": "C’est bien un génocide car l’extermination est programmée, organisée par l’Etat ottoman. Plus d’1 million (2/3) d’Arméniens seront assassinés seulement pour des raisons ethniques et religieuses"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "paragraphs": [
             {
-              "name": "Révolution russe de 1917"
-            },
-            {
-              "name": "Bilan de la guerre"
+              "type": "text",
+              "lines": [
+                [
+                  {
+                    "type": "normal",
+                    "contents": "8 millions de civils sont morts pendant IGM dont plus 1 million par génocide."
+                  }
+                ]
+              ]
             }
           ]
         }
       ]
     }
-  ]
+  }
 }
