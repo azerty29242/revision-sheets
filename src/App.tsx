@@ -1,101 +1,92 @@
 import { useEffect, useState } from "react";
 
-import RevisionSheets from "./data/RevisionSheets.json";
+interface Location {
+  folders: Folder[];
+  sheets: Sheet[];
+}
 
-import ListGroup from "./components/ListGroup";
-import SheetView from "./components/SheetView.tsx";
+interface Folder {
+  name: string;
+  path: string;
+}
 
-interface Data {
-  [key: string]: Data;
+interface Sheet {
+  name: string;
+  path: string;
 }
 
 const App = () => {
-  const revisionSheets: object = RevisionSheets;
-
-  const initialHeaders: string[] = ["Fiches bristol"];
-  const initialData: Data[] = [revisionSheets as Data];
-
-  const params = new URLSearchParams(window.location.search);
-
-  let providedHeaders: string[] = [];
-
-  if (params.has("location")) {
-    const locationString = params.get("location");
-    if (locationString) {
-      providedHeaders = locationString.split(".");
-    }
-  }
-
-  providedHeaders.every((header, index) => {
-    if (initialData[index][header]) {
-      initialData.push(initialData[index][header]);
-      initialHeaders.push(header);
-      return true;
-    } else {
-      return false;
-    }
-  });
-
-  const [headers, setHeaders] = useState<string[]>(initialHeaders);
-  const [data, setData] = useState<Data[]>(initialData);
-
-  const onItemSelect = (name: string, items: object) => {
-    setHeaders([...headers, name]);
-    setData([...data, items as Data]);
-  };
-
-  const goBack = () => {
-    setHeaders(
-      headers.filter((header) => header !== headers[headers.length - 1])
-    );
-    setData(data.filter((part) => part !== data[data.length - 1]));
-  };
+  const [viewMode, setViewMode] = useState("list" as "list" | "sheet");
+  const [locations, setLocations] = useState(["index.json"] as Array<string>);
+  const [currentLocationIndex, setCurrentLocationIndex] = useState({
+    folders: [],
+    sheets: [],
+  } as Location);
 
   useEffect(() => {
-    const baseLocation = location.origin + location.pathname + "?location=";
-
-    const url =
-      headers.length === 1
-        ? location.origin + location.pathname
-        : baseLocation + encodeURIComponent(headers.slice(1).join("."));
-
-    if (url !== location.href) {
-      window.history.pushState(
-        {},
-        `Fiches bristol - ${headers[headers.length - 1]}`,
-        url
-      );
+    if (viewMode === "list") {
+      fetch(locations[locations.length - 1]).then((response) => {
+        response.json().then((data) => {
+          setCurrentLocationIndex(data);
+        });
+      });
+    } else if (viewMode === "sheet") {
+      fetch(locations[locations.length - 1]).then((response) => {
+        response.text().then((sheet) => {
+          console.log(sheet);
+        });
+      });
     }
-  });
-
-  useEffect(() => {
-    const handlePopState = () => {
-      window.location.reload();
-    };
-
-    window.addEventListener("popstate", handlePopState);
-
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, []);
+  }, [locations, viewMode]);
 
   return (
-    <div className="container">
-      {headers.length >= 1 && headers.length <= 3 ? (
-        <ListGroup
-          header={headers[headers.length - 1]}
-          items={data[data.length - 1]}
-          backButton={headers.length !== 1}
-          onBackButtonClick={goBack}
-          onItemSelect={onItemSelect}
-        ></ListGroup>
-      ) : (
-        <SheetView
-          header={headers[headers.length - 1]}
-          sections={data[data.length - 1]}
-          onBackButtonClick={goBack}
-        ></SheetView>
+    <div>
+      {locations.length !== 1 && (
+        <button
+          onClick={() => {
+            setLocations(
+              locations.filter((location) => {
+                return location !== locations[locations.length - 1];
+              })
+            );
+            setViewMode("list");
+          }}
+          key={
+            currentLocationIndex.folders.length +
+            currentLocationIndex.sheets.length
+          }
+        >
+          Retour
+        </button>
+      )}
+      {viewMode === "list" && (
+        <>
+          {currentLocationIndex.folders.map((folder: Folder, index: number) => {
+            return (
+              <button
+                onClick={() => {
+                  setLocations([...locations, folder.path]);
+                }}
+                key={index}
+              >
+                {folder.name}
+              </button>
+            );
+          })}
+          {currentLocationIndex.sheets.map((sheet: Sheet, index: number) => {
+            return (
+              <button
+                onClick={() => {
+                  setLocations([...locations, sheet.path]);
+                  setViewMode("sheet");
+                }}
+                key={currentLocationIndex.folders.length + index}
+              >
+                {sheet.name}
+              </button>
+            );
+          })}
+        </>
       )}
     </div>
   );
