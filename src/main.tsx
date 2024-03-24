@@ -6,14 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // import "bootstrap/js/dist/popover.js";
 
+const homepage = window.location.origin + "/revision-sheets/";
+
 const search = window.location.search;
 const params = new URLSearchParams(search);
 
 const folder = params.get("folder");
 
 const sheet = params.get("sheet");
-
-const homepage = window.location.origin + "/revision-sheets/";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
