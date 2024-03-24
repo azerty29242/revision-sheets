@@ -39,7 +39,7 @@ class App extends React.Component<AppProps, AppState> {
 
   componentDidMount(): void {
     (async () => {
-      const response = await fetch("index.json");
+      const response = await fetch("list.json");
       this.setState({ indexing: await response.json() });
     })();
   }
