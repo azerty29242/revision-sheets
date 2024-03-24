@@ -1,8 +1,9 @@
 {
+  "name": "Fiches Bristol",
   "folders": [
     {
       "name": "Histoire",
-      "path": "histoire/index.json"
+      "path": "histoire/"
     }
   ],
   "sheets": []

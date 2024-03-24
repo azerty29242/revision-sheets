@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
-interface Location {
+interface Indexing {
+  name: string | null;
   folders: Folder[];
   sheets: Sheet[];
 }
@@ -15,81 +16,72 @@ interface Sheet {
   path: string;
 }
 
-const App = () => {
-  const [viewMode, setViewMode] = useState("list" as "list" | "sheet");
-  const [locations, setLocations] = useState(["index.json"] as Array<string>);
-  const [currentLocationIndex, setCurrentLocationIndex] = useState({
-    folders: [],
-    sheets: [],
-  } as Location);
+type AppProps = {
+  homepage: string;
+};
 
-  useEffect(() => {
-    if (viewMode === "list") {
-      fetch(locations[locations.length - 1]).then((response) => {
-        response.json().then((data) => {
-          setCurrentLocationIndex(data);
-        });
-      });
-    } else if (viewMode === "sheet") {
-      fetch(locations[locations.length - 1]).then((response) => {
-        response.text().then((sheet) => {
-          console.log(sheet);
-        });
-      });
-    }
-  }, [locations, viewMode]);
+type AppState = {
+  indexing: Indexing;
+};
 
-  return (
-    <div>
-      {locations.length !== 1 && (
-        <button
-          onClick={() => {
-            setLocations(
-              locations.filter((location) => {
-                return location !== locations[locations.length - 1];
-              })
-            );
-            setViewMode("list");
-          }}
-          key={
-            currentLocationIndex.folders.length +
-            currentLocationIndex.sheets.length
-          }
-        >
-          Retour
-        </button>
-      )}
-      {viewMode === "list" && (
-        <>
-          {currentLocationIndex.folders.map((folder: Folder, index: number) => {
+class App extends React.Component<AppProps, AppState> {
+  constructor(props: AppProps) {
+    super(props);
+
+    this.state = {
+      indexing: {
+        name: null,
+        folders: [],
+        sheets: [],
+      } as Indexing,
+    };
+  }
+
+  componentDidMount(): void {
+    (async () => {
+      const response = await fetch("index.json");
+      this.setState({ indexing: await response.json() });
+    })();
+  }
+
+  render(): React.ReactNode {
+    return (
+      <React.Fragment>
+        {this.state.indexing.name !== null && (
+          <h1>{this.state.indexing.name}</h1>
+        )}
+        <div className="list-group">
+          {this.state.indexing.folders.map((folder, index) => {
             return (
-              <button
-                onClick={() => {
-                  setLocations([...locations, folder.path]);
-                }}
+              <a
                 key={index}
+                className="list-group-item list-group-item-action"
+                href={this.props.homepage + folder.path}
               >
                 {folder.name}
-              </button>
+              </a>
             );
           })}
-          {currentLocationIndex.sheets.map((sheet: Sheet, index: number) => {
+          {this.state.indexing.sheets.map((sheet, index) => {
             return (
-              <button
-                onClick={() => {
-                  setLocations([...locations, sheet.path]);
-                  setViewMode("sheet");
-                }}
-                key={currentLocationIndex.folders.length + index}
+              <a
+                key={index + this.state.indexing.folders.length}
+                className="list-group-item list-group-item-action"
+                href={
+                  window.location.origin +
+                  window.location.pathname +
+                  "?sheet=" +
+                  encodeURIComponent(sheet.path)
+                }
               >
                 {sheet.name}
-              </button>
+              </a>
             );
           })}
-        </>
-      )}
-    </div>
-  );
-};
+        </div>
+      </React.Fragment>
+    );
+  }
+}
 
 export default App;

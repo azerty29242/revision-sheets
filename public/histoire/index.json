@@ -1,8 +1,9 @@
 {
+  "name": "Histoire",
   "folders": [
     {
       "name": "Première Guerre Mondiale",
-      "path": "histoire/premiere-guerre-mondiale/index.json"
+      "path": "histoire/premiere-guerre-mondiale/"
     }
   ],
   "sheets": []
