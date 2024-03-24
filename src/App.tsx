@@ -17,6 +17,8 @@ interface Sheet {
 }
 
 type AppProps = {
+  folder: string | null;
+  sheet: string | null;
   homepage: string;
 };
 
@@ -39,8 +41,18 @@ class App extends React.Component<AppProps, AppState> {
 
   componentDidMount(): void {
     (async () => {
-      const response = await fetch("list.json");
-      this.setState({ indexing: await response.json() });
+      if (this.props.folder !== null) {
+        const response = await fetch(
+          this.props.homepage + this.props.folder + "index.json"
+        );
+        this.setState({ indexing: await response.json() });
+      } else if (this.props.sheet !== null) {
+        const response = await fetch(this.props.homepage + this.props.sheet);
+        console.log(await response.text());
+      } else {
+        const response = await fetch(this.props.homepage + "index.json");
+        this.setState({ indexing: await response.json() });
+      }
     })();
   }
 
@@ -56,7 +68,11 @@ class App extends React.Component<AppProps, AppState> {
               <a
                 key={index}
                 className="list-group-item list-group-item-action"
-                href={this.props.homepage + folder.path}
+                href={
+                  this.props.homepage +
+                  "?folder=" +
+                  encodeURIComponent(folder.path)
+                }
               >
                 {folder.name}
               </a>
@@ -68,8 +84,7 @@ class App extends React.Component<AppProps, AppState> {
                 key={index + this.state.indexing.folders.length}
                 className="list-group-item list-group-item-action"
                 href={
-                  window.location.origin +
-                  window.location.pathname +
+                  this.props.homepage +
                   "?sheet=" +
                   encodeURIComponent(sheet.path)
                 }

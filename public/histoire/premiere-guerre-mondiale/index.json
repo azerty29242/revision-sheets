@@ -4,15 +4,15 @@
   "sheets": [
     {
       "name": "Le génocide Arménien",
-      "path": "le-genocide-armenien.rvs"
+      "path": "histoire/premiere-guerre-mondiale/le-genocide-armenien.rvs"
     },
     {
       "name": "Les soldats pendant la Première Guerre Mondiale",
-      "path": "les-soldats-pendant-la-premiere-guerre-mondiale.rvs"
+      "path": "histoire/premiere-guerre-mondiale/les-soldats-pendant-la-premiere-guerre-mondiale.rvs"
     },
     {
       "name": "Les civils pendant la Première Guerre Mondiale",
-      "path": "les-civils-pendant-la-premiere-guere-mondiale.rvs"
+      "path": "histoire/premiere-guerre-mondiale/les-civils-pendant-la-premiere-guere-mondiale.rvs"
     }
   ]
 }
