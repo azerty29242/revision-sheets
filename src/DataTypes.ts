@@ -1,15 +1,14 @@
-export interface Indexing {
-  name: string | null;
-  folders: Folder[];
-  sheets: Sheet[];
+export interface Sheet {
+  name: string;
+  type: "sheet";
 }
 
 export interface Folder {
   name: string;
-  path: string;
+  type: "folder";
+  contents: {
+    [id: string]: Folder | Sheet;
+  };
 }
 
-export interface Sheet {
-  name: string;
-  path: string;
-}
+export type Item = Folder | Sheet;

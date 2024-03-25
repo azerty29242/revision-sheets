@@ -1,11 +1,11 @@
 import React from "react";
-import { Indexing } from "./DataTypes.ts";
+import { Folder } from "./DataTypes.ts";
 import BackButton from "./BackButton.tsx";
 
 type ListProps = {
-  homepage: string;
-  folder: string | null;
-  items: Indexing;
+  location: string;
+  updateLocation: (newLocation: string) => void;
+  items: Folder;
 };
 
 class List extends React.Component<ListProps> {
@@ -14,39 +14,21 @@ class List extends React.Component<ListProps> {
       <div className="d-flex flex-column gap-2">
         {this.props.items.name !== null && <h1>{this.props.items.name}</h1>}
         <BackButton
-          homepage={this.props.homepage}
-          folder={this.props.folder}
-          sheet={null}
+          location={this.props.location}
+          updateLocation={this.props.updateLocation}
         ></BackButton>
         <div className="list-group">
-          {this.props.items.folders.map((folder, index) => {
+          {Object.entries(this.props.items.contents).map(([id, item]) => {
             return (
-              <a
-                key={index}
+              <button
+                key={id}
                 className="list-group-item list-group-item-action"
-                href={
-                  this.props.homepage +
-                  "?folder=" +
-                  encodeURIComponent(folder.path)
+                onClick={() =>
+                  this.props.updateLocation(this.props.location + id)
                 }
               >
-                {folder.name}
-              </a>
-            );
-          })}
-          {this.props.items.sheets.map((sheet, index) => {
-            return (
-              <a
-                key={index + this.props.items.folders.length}
-                className="list-group-item list-group-item-action"
-                href={
-                  this.props.homepage +
-                  "?sheet=" +
-                  encodeURIComponent(sheet.path)
-                }
-              >
-                {sheet.name}
-              </a>
+                {item.name}
+              </button>
             );
           })}
         </div>

@@ -1,58 +1,97 @@
 import React from "react";
-import { Indexing } from "./DataTypes.ts";
+import { Folder, Sheet } from "./DataTypes.ts";
+import sheets from "./Sheets.ts";
 import List from "./List.tsx";
 
-type AppProps = {
-  homepage: string;
-  folder: string | null;
-  sheet: string | null;
-};
-
 type AppState = {
-  items: Indexing;
-  contents: string;
-  viewMode: "list" | "sheet" | null;
+  currentItem: Folder | Sheet;
+  location: string;
+  viewMode: "folder" | "sheet" | string;
 };
 
-class App extends React.Component<AppProps, AppState> {
+class App extends React.Component<unknown, AppState> {
   state = {
-    items: {
-      name: null,
-      folders: [],
-      sheets: [],
-    },
-    contents: "",
-    viewMode: null,
+    currentItem: sheets,
+    location: "",
+    viewMode: "",
   };
 
   componentDidMount(): void {
-    (async () => {
-      if (this.props.folder !== null) {
-        const response = await fetch(
-          this.props.homepage + this.props.folder + "index.json"
-        );
-        this.setState({ items: await response.json(), viewMode: "list" });
-      } else if (this.props.sheet !== null) {
-        const response = await fetch(this.props.homepage + this.props.sheet);
-        this.setState({ contents: await response.text(), viewMode: "sheet" });
+    if (location.hash !== "" && location.hash !== "#") {
+      this.updateLocation(location.hash.substring(1));
+    } else {
+      this.updateLocation("");
+    }
+
+    window.addEventListener("popstate", (event) => {
+      this.setState(event.state);
+    });
+  }
+
+  updateLocation(newLocation: string): void {
+    let verifiedItem: Folder | Sheet = sheets;
+    let verifiedLocation: string = "";
+
+    for (const character of newLocation) {
+      if (
+        verifiedItem.type === "folder" &&
+        verifiedItem.contents[character] !== undefined
+      ) {
+        verifiedItem = verifiedItem.contents[character];
+        verifiedLocation += character;
       } else {
-        const response = await fetch(this.props.homepage + "index.json");
-        this.setState({ items: await response.json(), viewMode: "list" });
+        break;
       }
-    })();
+    }
+
+    this.setState({
+      location: verifiedLocation,
+      currentItem: verifiedItem,
+      viewMode: verifiedItem.type,
+    });
+
+    let hash = "";
+
+    if (verifiedLocation !== "") {
+      hash = "#" + verifiedLocation;
+    }
+
+    if (this.state.location !== verifiedLocation) {
+      history.pushState(
+        {
+          location: verifiedLocation,
+          currentItem: verifiedItem,
+          viewMode: verifiedItem.type,
+        },
+        "",
+        location.origin + location.pathname + hash
+      );
+    } else {
+      history.replaceState(
+        {
+          location: verifiedLocation,
+          currentItem: verifiedItem,
+          viewMode: verifiedItem.type,
+        },
+        "",
+        location.origin + location.pathname + hash
+      );
+    }
   }
 
   render(): React.ReactNode {
     return (
       <React.Fragment>
-        {this.state.viewMode === "list" && (
+        {this.state.viewMode === "folder" && (
           <List
-            homepage={this.props.homepage}
-            folder={this.props.folder}
-            items={this.state.items}
+            location={this.state.location}
+            updateLocation={(newLocation: string) =>
+              this.updateLocation(newLocation)
+            }
+            items={this.state.currentItem}
           ></List>
         )}
-        {this.state.viewMode === "sheet" && <span>{this.state.contents}</span>}
+        {/* {this.state.viewMode === "sheet" && <span>{this.state.contents}</span>} */}
       </React.Fragment>
     );
   }
