@@ -42,7 +42,7 @@ class BackButton extends React.Component<BackButtonProps, BackButtonState> {
     console.log(folder);
 
     if (folder !== null) {
-      this.setState({ target: this.props.homepage + "?folder=" + decodeURIComponent(folder) });
+      this.setState({ target: this.props.homepage + "?folder=" + encodeURIComponent(folder) });
     } else {
       this.setState({ target: this.props.homepage });
     }
