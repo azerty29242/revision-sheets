@@ -1,8 +1,10 @@
 import React from "react";
 import { Indexing } from "./DataTypes.ts";
+import BackButton from "./BackButton.tsx";
 
 type ListProps = {
   homepage: string;
+  folder: string | null;
   items: Indexing;
 };
 
@@ -11,6 +13,11 @@ class List extends React.Component<ListProps> {
     return (
       <React.Fragment>
         {this.props.items.name !== null && <h1>{this.props.items.name}</h1>}
+        <BackButton
+          homepage={this.props.homepage}
+          folder={this.props.folder}
+          sheet={null}
+        ></BackButton>
         <div className="list-group">
           {this.props.items.folders.map((folder, index) => {
             return (

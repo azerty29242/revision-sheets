@@ -46,7 +46,11 @@ class App extends React.Component<AppProps, AppState> {
     return (
       <React.Fragment>
         {this.state.viewMode === "list" && (
-          <List homepage={this.props.homepage} items={this.state.items}></List>
+          <List
+            homepage={this.props.homepage}
+            folder={this.props.folder}
+            items={this.state.items}
+          ></List>
         )}
         {this.state.viewMode === "sheet" && <span>{this.state.contents}</span>}
       </React.Fragment>

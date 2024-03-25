@@ -11,9 +11,13 @@ const homepage = window.location.origin + "/revision-sheets/";
 const search = window.location.search;
 const params = new URLSearchParams(search);
 
-const folder = params.get("folder");
+let folder = params.get("folder");
 
-const sheet = params.get("sheet");
+if (folder !== null) folder = decodeURIComponent(folder);
+
+let sheet = params.get("sheet");
+
+if (sheet !== null) sheet = decodeURIComponent(sheet);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
