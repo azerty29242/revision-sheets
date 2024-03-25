@@ -11,7 +11,7 @@ type ListProps = {
 class List extends React.Component<ListProps> {
   render(): React.ReactNode {
     return (
-      <React.Fragment>
+      <div className="d-flex flex-column gap-2">
         {this.props.items.name !== null && <h1>{this.props.items.name}</h1>}
         <BackButton
           homepage={this.props.homepage}
@@ -50,7 +50,7 @@ class List extends React.Component<ListProps> {
             );
           })}
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
