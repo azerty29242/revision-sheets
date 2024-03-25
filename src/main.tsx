@@ -6,6 +6,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // import "bootstrap/js/dist/popover.js";
 
+interface Sheet {
+  name: string,
+  path: string
+}
+
+interface Folder {
+  name: string,
+  subfolders: Folder[],
+  sheets: Sheet[]
+}
+
+const files: Folder = {
+  name: "Fiches Bristol",
+  subfolders: [
+    {
+      name: "Histoire",
+      path: "histoire/"
+    }
+  ],
+  sheets: []
+}
+
 const homepage = window.location.origin + "/revision-sheets/";
 
 const search = window.location.search;
