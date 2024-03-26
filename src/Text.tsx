@@ -2,10 +2,11 @@ import React from "react";
 
 import "katex";
 import renderMathInElement from "katex/contrib/auto-render";
+import { Line } from "./DataTypes";
 
 type TextProps = {
   type: "text" | "list";
-  contents: string;
+  contents: Line;
 };
 
 class Text extends React.Component<TextProps> {
@@ -30,15 +31,22 @@ class Text extends React.Component<TextProps> {
   }
 
   render(): React.ReactNode {
-    if (this.props.type === "list") {
-      return <li ref={this.ref}>{this.props.contents}</li>;
-    } else {
-      return (
-        <li ref={this.ref} className="no-list-style">
-          {this.props.contents}
-        </li>
-      );
-    }
+    return (
+      <li
+        ref={this.ref}
+        className={this.props.type === "text" ? "no-list-style" : ""}
+      >
+        {this.props.contents.map((text) => {
+          return (
+            <span
+              className={text.color !== null ? "highlight-" + text.color : ""}
+            >
+              {text.contents}
+            </span>
+          );
+        })}
+      </li>
+    );
   }
 }
 

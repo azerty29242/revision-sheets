@@ -11,7 +11,14 @@ export interface Folder {
   };
 }
 
-export type Line = string;
+export interface RawText {
+  contents: string;
+  color: string | null;
+  type: "defined" | "link" | null;
+  target: string | null;
+}
+
+export type Line = RawText[];
 
 export interface Paragraph {
   type: string;

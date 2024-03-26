@@ -1,6 +1,5 @@
 Le Génocide Arménien
 
-
 First section
 
 \@ Text : \(x^2 + y^2 = z^2\)
@@ -11,7 +10,7 @@ First section
 \- Unordered list : \(x^2 + y^2 = z^2\)
 \- Unordered list : \(x^2 + y^2 = z^2\)
 
-\_ Ordered list : \(x^2 + y^2 = z^2\)
+\_ Ordered list : \6\(x^2 + y^2 = z^2\)\6
 \_ Ordered list : \(x^2 + y^2 = z^2\)
 \_ Ordered list : \(x^2 + y^2 = z^2\)
 
@@ -20,7 +19,7 @@ First section
 \# &= x^2 + x \pi + \pi x + \pi^2
 \# &= x^2 + 2 x \pi + \pi^2 \end{split}
 
+Second section
 
-\\ Second section
-\\
-\\ \@ Normal text
+\@ Normal text
+\@ \0Highlighted text\0, \1highlighted text\1, \2highlighted text\2, \3highlighted text\3

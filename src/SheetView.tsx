@@ -41,6 +41,7 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
       let currentMode = "";
       let currentSection = -1;
       let currentParagraph = -1;
+      let currentLine = -1;
       for (const lineIndex in lines) {
         const line = lines[lineIndex].trim();
         if (line === "") continue;
@@ -52,12 +53,89 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
               lines: [],
             });
             currentParagraph += 1;
+            currentLine = -1;
             currentMode = line[1];
+          }
+
+          const lineContents = line.substring(3);
+
+          if (currentMode === "#") {
+            sheet.sections[currentSection].paragraphs[
+              currentParagraph
+            ].lines.push([
+              {
+                contents: lineContents,
+                color: null,
+                type: null,
+                target: null,
+              },
+            ]);
+
+            continue;
           }
 
           sheet.sections[currentSection].paragraphs[
             currentParagraph
-          ].lines.push(line.substring(3));
+          ].lines.push([]);
+
+          currentLine += 1;
+
+          let currentString = "";
+          let currentColor = null as string | null;
+          let foundBackslash = false;
+
+          const colors = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+          const exceptions = ["(", ")"];
+
+          for (const letter of lineContents) {
+            if (foundBackslash) {
+              if (colors.includes(letter)) {
+                if (currentString !== "") {
+                  sheet.sections[currentSection].paragraphs[
+                    currentParagraph
+                  ].lines[currentLine].push({
+                    contents: currentString,
+                    color: currentColor,
+                    type: null,
+                    target: null,
+                  });
+
+                  currentString = "";
+                }
+
+                if (currentColor === letter) {
+                  currentColor = null;
+                } else if (currentColor === null) {
+                  currentColor = letter;
+                }
+              } else if (exceptions.includes(letter)) {
+                currentString += "\\" + letter;
+              } else {
+                currentString += letter;
+              }
+
+              foundBackslash = false;
+              continue;
+            }
+
+            if (letter === "\\") {
+              foundBackslash = true;
+              continue;
+            }
+
+            currentString += letter;
+          }
+
+          if (currentString !== "") {
+            sheet.sections[currentSection].paragraphs[currentParagraph].lines[
+              currentLine
+            ].push({
+              contents: currentString,
+              color: null,
+              type: null,
+              target: null,
+            });
+          }
         } else {
           sheet.sections.push({
             header: line,
@@ -119,7 +197,21 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
                     <p key={paragraphIndex}>
                       <Text
                         type="text"
-                        contents={"\\[" + paragraph.lines.join("\\\\") + "\\]"}
+                        contents={[
+                          {
+                            contents:
+                              "\\[" +
+                              sheet.sections[0].paragraphs[3].lines
+                                .map((line) =>
+                                  line.map((text) => text.contents).join("")
+                                )
+                                .join("\\\\ ") +
+                              "\\]",
+                            color: null,
+                            type: null,
+                            target: null,
+                          },
+                        ]}
                       ></Text>
                     </p>
                   );
