@@ -2,13 +2,13 @@ import React from "react";
 import { Folder } from "./DataTypes.ts";
 import BackButton from "./BackButton.tsx";
 
-type ListProps = {
+type ListViewProps = {
   location: string;
   updateLocation: (newLocation: string) => void;
   items: Folder;
 };
 
-class List extends React.Component<ListProps> {
+class ListView extends React.Component<ListViewProps> {
   render(): React.ReactNode {
     return (
       <div className="d-flex flex-column gap-2">
@@ -37,4 +37,4 @@ class List extends React.Component<ListProps> {
   }
 }
 
-export default List;
+export default ListView;

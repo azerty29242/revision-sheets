@@ -11,4 +11,19 @@ export interface Folder {
   };
 }
 
-export type Item = Folder | Sheet;
+export type Line = string;
+
+export interface Paragraph {
+  type: string;
+  lines: Line[];
+}
+
+export interface Section {
+  header: string;
+  paragraphs: Paragraph[];
+}
+
+export interface SheetData {
+  title: string;
+  sections: Section[];
+}

@@ -13,7 +13,7 @@ const sheets: Folder = {
           type: "folder",
           contents: {
             "0": {
-              name: "Le génocide Arménien",
+              name: "Le Génocide Arménien",
               type: "sheet",
             },
             "1": {

@@ -1,4 +1,15 @@
-.text-bg-blue {
+ol,
+ul {
+  list-style-position: inside;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+}
+
+.no-list-style {
+  list-style-type: none;
+}
+
+/* .text-bg-blue {
   background-color: color-mix(in srgb, #0d6efd 50%, white) !important;
 }
 
@@ -36,4 +47,4 @@
 
 .text-bg-cyan {
   background-color: color-mix(in srgb, #0dcaf0 50%, white);
-}
+} */

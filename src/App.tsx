@@ -1,19 +1,18 @@
 import React from "react";
 import { Folder, Sheet } from "./DataTypes.ts";
 import sheets from "./Sheets.ts";
-import List from "./List.tsx";
+import ListView from "./ListView.tsx";
+import SheetView from "./SheetView.tsx";
 
 type AppState = {
   currentItem: Folder | Sheet;
   location: string;
-  viewMode: "folder" | "sheet" | string;
 };
 
-class App extends React.Component<unknown, AppState> {
+class App extends React.Component<Record<string, never>, AppState> {
   state = {
-    currentItem: sheets,
+    currentItem: sheets as Folder | Sheet,
     location: "",
-    viewMode: "",
   };
 
   componentDidMount(): void {
@@ -47,7 +46,6 @@ class App extends React.Component<unknown, AppState> {
     this.setState({
       location: verifiedLocation,
       currentItem: verifiedItem,
-      viewMode: verifiedItem.type,
     });
 
     let hash = "";
@@ -61,7 +59,6 @@ class App extends React.Component<unknown, AppState> {
         {
           location: verifiedLocation,
           currentItem: verifiedItem,
-          viewMode: verifiedItem.type,
         },
         "",
         location.origin + location.pathname + hash
@@ -71,7 +68,6 @@ class App extends React.Component<unknown, AppState> {
         {
           location: verifiedLocation,
           currentItem: verifiedItem,
-          viewMode: verifiedItem.type,
         },
         "",
         location.origin + location.pathname + hash
@@ -82,16 +78,24 @@ class App extends React.Component<unknown, AppState> {
   render(): React.ReactNode {
     return (
       <React.Fragment>
-        {this.state.viewMode === "folder" && (
-          <List
+        {this.state.currentItem.type === "folder" && (
+          <ListView
             location={this.state.location}
             updateLocation={(newLocation: string) =>
               this.updateLocation(newLocation)
             }
             items={this.state.currentItem}
-          ></List>
+          ></ListView>
         )}
-        {/* {this.state.viewMode === "sheet" && <span>{this.state.contents}</span>} */}
+        {this.state.currentItem.type === "sheet" && (
+          <SheetView
+            location={this.state.location}
+            updateLocation={(newLocation: string) =>
+              this.updateLocation(newLocation)
+            }
+            sheet={this.state.currentItem}
+          ></SheetView>
+        )}
       </React.Fragment>
     );
   }
