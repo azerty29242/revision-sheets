@@ -1,6 +1,7 @@
 import React from "react";
 import { Sheet, SheetData } from "./DataTypes";
 import BackButton from "./BackButton";
+import Text from "./Text";
 
 type SheetViewProps = {
   location: string;
@@ -41,8 +42,10 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
       let currentSection = -1;
       let currentParagraph = -1;
       for (const lineIndex in lines) {
-        const line = lines[lineIndex];
+        const line = lines[lineIndex].trim();
+        if (line === "") continue;
         if (line[0] === "\\") {
+          if (line[1] === "\\") continue;
           if (currentMode !== line[1]) {
             sheet.sections[currentSection].paragraphs.push({
               type: line[1],
@@ -60,6 +63,7 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
             header: line,
             paragraphs: [],
           });
+          currentMode = "";
           currentSection += 1;
           currentParagraph = -1;
         }
@@ -86,7 +90,13 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
                   return (
                     <ul key={paragraphIndex}>
                       {paragraph.lines.map((line, lineIndex) => {
-                        return <li key={lineIndex}>{line}</li>;
+                        return (
+                          <Text
+                            key={lineIndex}
+                            type="list"
+                            contents={line}
+                          ></Text>
+                        );
                       })}
                     </ul>
                   );
@@ -94,18 +104,35 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
                   return (
                     <ol key={paragraphIndex}>
                       {paragraph.lines.map((line, lineIndex) => {
-                        return <li key={lineIndex}>{line}</li>;
+                        return (
+                          <Text
+                            key={lineIndex}
+                            type="list"
+                            contents={line}
+                          ></Text>
+                        );
                       })}
                     </ol>
+                  );
+                } else if (paragraph.type === "#") {
+                  return (
+                    <p key={paragraphIndex}>
+                      <Text
+                        type="text"
+                        contents={"\\[" + paragraph.lines.join("\\\\") + "\\]"}
+                      ></Text>
+                    </p>
                   );
                 } else {
                   return (
                     <p key={paragraphIndex}>
                       {paragraph.lines.map((line, lineIndex) => {
                         return (
-                          <li key={lineIndex} className="no-list-style">
-                            {line}
-                          </li>
+                          <Text
+                            key={lineIndex}
+                            type="text"
+                            contents={line}
+                          ></Text>
                         );
                       })}
                     </p>

@@ -1,15 +1,26 @@
 Le Génocide Arménien
+
+
 First section
-\- Unordered list
-\_ Ordered list
-\@ Text
-First section
-\- Unordered list
-\- Unordered list
-\- Unordered list
-\_ Ordered list
-\_ Ordered list
-\_ Ordered list
-\@ Text
-\@ Text
-\@ Text
+
+\@ Text : \(x^2 + y^2 = z^2\)
+\@ Text : \(x^2 + y^2 = z^2\)
+\@ Text : \(x^2 + y^2 = z^2\)
+
+\- Unordered list : \(x^2 + y^2 = z^2\)
+\- Unordered list : \(x^2 + y^2 = z^2\)
+\- Unordered list : \(x^2 + y^2 = z^2\)
+
+\_ Ordered list : \(x^2 + y^2 = z^2\)
+\_ Ordered list : \(x^2 + y^2 = z^2\)
+\_ Ordered list : \(x^2 + y^2 = z^2\)
+
+\# \begin{split} f(x) &= (x + \pi)^2
+\# &= (x + \pi)\sdot(x + \pi)
+\# &= x^2 + x \pi + \pi x + \pi^2
+\# &= x^2 + 2 x \pi + \pi^2 \end{split}
+
+
+\\ Second section
+\\
+\\ \@ Normal text

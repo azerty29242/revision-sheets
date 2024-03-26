@@ -5,6 +5,11 @@ ul {
   padding-inline-start: 0;
 }
 
+.katex-display,
+.katex {
+  text-align: left !important;
+}
+
 .no-list-style {
   list-style-type: none;
 }
