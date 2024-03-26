@@ -59,7 +59,7 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
 
           const lineContents = line.substring(3);
 
-          if (currentMode === "#") {
+          if (currentMode === "T") {
             sheet.sections[currentSection].paragraphs[
               currentParagraph
             ].lines.push([
@@ -81,6 +81,8 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
           currentLine += 1;
 
           let currentString = "";
+          let currentTarget = "";
+          let currentType = null as "defined" | null;
           let currentColor = null as string | null;
           let foundBackslash = false;
 
@@ -96,8 +98,8 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
                   ].lines[currentLine].push({
                     contents: currentString,
                     color: currentColor,
-                    type: null,
-                    target: null,
+                    type: currentType,
+                    target: currentTarget,
                   });
 
                   currentString = "";
@@ -110,6 +112,25 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
                 }
               } else if (exceptions.includes(letter)) {
                 currentString += "\\" + letter;
+              } else if (letter === "&") {
+                currentType = "defined";
+                currentTarget = currentString;
+                currentString = "";
+              } else if (letter === "@") {
+                if (currentString !== "") {
+                  sheet.sections[currentSection].paragraphs[
+                    currentParagraph
+                  ].lines[currentLine].push({
+                    contents: currentTarget,
+                    color: currentColor,
+                    type: currentType,
+                    target: currentString,
+                  });
+
+                  currentType = null;
+                  currentTarget = "";
+                  currentString = "";
+                }
               } else {
                 currentString += letter;
               }
@@ -148,6 +169,8 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
       }
     }
 
+    console.log(sheet);
+
     return (
       <React.Fragment>
         {this.state.contents !== null ? (
@@ -164,13 +187,14 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
             <React.Fragment key={sectionIndex}>
               <h4 className="text-success">{section.header}</h4>
               {section.paragraphs.map((paragraph, paragraphIndex) => {
-                if (paragraph.type === "-") {
+                if (paragraph.type === "U") {
                   return (
                     <ul key={paragraphIndex}>
                       {paragraph.lines.map((line, lineIndex) => {
                         return (
                           <Text
                             key={lineIndex}
+                            updateLocation={this.props.updateLocation}
                             type="list"
                             contents={line}
                           ></Text>
@@ -178,13 +202,14 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
                       })}
                     </ul>
                   );
-                } else if (paragraph.type === "_") {
+                } else if (paragraph.type === "O") {
                   return (
                     <ol key={paragraphIndex}>
                       {paragraph.lines.map((line, lineIndex) => {
                         return (
                           <Text
                             key={lineIndex}
+                            updateLocation={this.props.updateLocation}
                             type="list"
                             contents={line}
                           ></Text>
@@ -192,10 +217,12 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
                       })}
                     </ol>
                   );
-                } else if (paragraph.type === "#") {
+                } else if (paragraph.type === "T") {
                   return (
                     <p key={paragraphIndex}>
                       <Text
+                        key={0}
+                        updateLocation={this.props.updateLocation}
                         type="text"
                         contents={[
                           {
@@ -222,6 +249,7 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
                         return (
                           <Text
                             key={lineIndex}
+                            updateLocation={this.props.updateLocation}
                             type="text"
                             contents={line}
                           ></Text>

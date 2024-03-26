@@ -14,7 +14,7 @@ export interface Folder {
 export interface RawText {
   contents: string;
   color: string | null;
-  type: "defined" | "link" | null;
+  type: "defined" | null;
   target: string | null;
 }
 
