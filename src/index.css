@@ -1,7 +1,19 @@
-ol,
 ul {
   margin-inline-start: 0;
-  padding-inline-start: 1rem;
+  padding-inline-start: 1.25em;
+}
+
+ol {
+  margin-inline-start: 0;
+  padding-inline-start: 1.5em;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
 }
 
 .katex-display,

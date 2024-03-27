@@ -169,8 +169,6 @@ class SheetView extends React.Component<SheetViewProps, SheetViewState> {
       }
     }
 
-    console.log(sheet);
-
     return (
       <React.Fragment>
         {this.state.contents !== null ? (
