@@ -7,71 +7,62 @@ import jpg5 from "../assets/5.jpg";
 import jpg6 from "../assets/6.jpg";
 import jpg7 from "../assets/7.jpg";
 
-interface Folder {
-  name: string;
-  type: "folder";
-  subitems: string[];
-  image: string;
-}
-
-interface Sheet {
-  name: string;
-  type: "sheet";
-  image: string;
-}
-
-export type Item = Folder | Sheet;
-
-const sheets: { [key: string]: Item } = {
+const sheets = {
   "": {
     name: "Fiches de révision",
     type: "folder",
     subitems: ["0", "1", "2", "3", "4", "5", "6", "7"],
     image: "",
   },
-  "0": {
+  0: {
     name: "Français",
+    type: "folder",
+    subitems: ["00"],
+    image: jpg0,
+  },
+  "00": {
+    name: "Poésie",
     type: "folder",
     subitems: [],
     image: jpg0,
   },
-  "1": {
+  1: {
     name: "Mathématiques",
     type: "folder",
     subitems: [],
     image: jpg1,
   },
-  "2": {
+  2: {
     name: "Histoire",
     type: "folder",
     subitems: [],
     image: jpg2,
   },
-  "3": {
+  3: {
     name: "Géographie",
     type: "folder",
     subitems: [],
     image: jpg3,
   },
-  "4": {
+  4: {
     name: "Physique",
     type: "folder",
     subitems: [],
     image: jpg4,
   },
-  "5": {
+  5: {
     name: "Chimie",
     type: "folder",
     subitems: [],
     image: jpg5,
   },
-  "6": {
+  6: {
     name: "SVT",
     type: "folder",
     subitems: [],
     image: jpg6,
   },
-  "7": {
+  7: {
     name: "Technologie",
     type: "folder",
     subitems: [],

@@ -1,21 +1,72 @@
-<script lang="typescript">
-  import sheets from "./lib/sheets"
-  let location = ""
-  $: item = sheets[location]
+<script>
+  import BackButton from "./lib/BackButton.svelte";
+  import ListView from "./lib/ListView.svelte";
+  import sheets from "./lib/sheets.js";
+
+  let currentLocation = "";
+
+  function replaceHistoryState() {
+    if (currentLocation === "") {
+      history.replaceState({}, "", location.origin + location.pathname);
+    } else {
+      history.replaceState(
+        {},
+        "",
+        location.origin + location.pathname + "#" + currentLocation
+      );
+    }
+
+    document.title = sheets[currentLocation].name;
+  }
+
+  function pushHistoryState() {
+    if (currentLocation === "") {
+      history.pushState({}, "", location.origin + location.pathname);
+    } else {
+      history.pushState(
+        {},
+        "",
+        location.origin + location.pathname + "#" + currentLocation
+      );
+    }
+
+    document.title = sheets[currentLocation].name;
+  }
+
+  /**
+   * @param {string} newLocation
+   */
+  function updateLocation(newLocation) {
+    currentLocation = newLocation;
+
+    pushHistoryState();
+  }
+
+  const hash = location.hash;
+
+  if (hash !== null && hash.length >= 2) {
+    for (const letter of hash.substring(1)) {
+      if (Object.hasOwn(sheets, currentLocation + letter)) {
+        currentLocation += letter;
+      } else {
+        break;
+      }
+    }
+  }
+
+  replaceHistoryState();
+
+  $: item = sheets[currentLocation];
 </script>
 
-<div class="container mx-auto px-4 flex flex-col gap-4">
-  <h1 class="text-3xl font-bold">{item.name}</h1>
-  {#if (item.type === "folder")}
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 w-full">
-    {#each item.subitems.map((subitem) => sheets[subitem]) as subitem}
-      <div class="border rounded">
-        <img src={subitem.image} alt="" class="w-full rounded-t">
-        <div class="px-2 flex justify-center items-center h-12"><span class="font-bold">{subitem.name}</span></div>
-      </div>
-    {/each}
-  </div>
+<div class="container mx-auto px-4">
+  <h1 class="text-3xl font-bold mb-4">{item.name}</h1>
+  {#if currentLocation !== ""}
+    <BackButton {currentLocation} {updateLocation} />
+  {/if}
+  {#if item.type === "folder"}
+    <ListView {item} {updateLocation} />
   {:else}
-  <p>Sheet view</p>
+    <p>Sheet view</p>
   {/if}
 </div>
