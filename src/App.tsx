@@ -1,95 +1,104 @@
-import { useEffect, useState } from "react";
+import React from "react";
+import { Folder, Sheet } from "./DataTypes.ts";
+import sheets from "./Sheets.ts";
+import ListView from "./ListView.tsx";
+import SheetView from "./SheetView.tsx";
 
-interface Location {
-  folders: Folder[];
-  sheets: Sheet[];
-}
-
-interface Folder {
-  name: string;
-  path: string;
-}
-
-interface Sheet {
-  name: string;
-  path: string;
-}
-
-const App = () => {
-  const [viewMode, setViewMode] = useState("list" as "list" | "sheet");
-  const [locations, setLocations] = useState(["index.json"] as Array<string>);
-  const [currentLocationIndex, setCurrentLocationIndex] = useState({
-    folders: [],
-    sheets: [],
-  } as Location);
-
-  useEffect(() => {
-    if (viewMode === "list") {
-      fetch(locations[locations.length - 1]).then((response) => {
-        response.json().then((data) => {
-          setCurrentLocationIndex(data);
-        });
-      });
-    } else if (viewMode === "sheet") {
-      fetch(locations[locations.length - 1]).then((response) => {
-        response.text().then((sheet) => {
-          console.log(sheet);
-        });
-      });
-    }
-  }, [locations, viewMode]);
-
-  return (
-    <div>
-      {locations.length !== 1 && (
-        <button
-          onClick={() => {
-            setLocations(
-              locations.filter((location) => {
-                return location !== locations[locations.length - 1];
-              })
-            );
-            setViewMode("list");
-          }}
-          key={
-            currentLocationIndex.folders.length +
-            currentLocationIndex.sheets.length
-          }
-        >
-          Retour
-        </button>
-      )}
-      {viewMode === "list" && (
-        <>
-          {currentLocationIndex.folders.map((folder: Folder, index: number) => {
-            return (
-              <button
-                onClick={() => {
-                  setLocations([...locations, folder.path]);
-                }}
-                key={index}
-              >
-                {folder.name}
-              </button>
-            );
-          })}
-          {currentLocationIndex.sheets.map((sheet: Sheet, index: number) => {
-            return (
-              <button
-                onClick={() => {
-                  setLocations([...locations, sheet.path]);
-                  setViewMode("sheet");
-                }}
-                key={currentLocationIndex.folders.length + index}
-              >
-                {sheet.name}
-              </button>
-            );
-          })}
-        </>
-      )}
-    </div>
-  );
+type AppState = {
+  currentItem: Folder | Sheet;
+  location: string;
 };
+
+class App extends React.Component<Record<string, never>, AppState> {
+  state = {
+    currentItem: sheets as Folder | Sheet,
+    location: "",
+  };
+
+  componentDidMount(): void {
+    if (location.hash !== "" && location.hash !== "#") {
+      this.updateLocation(location.hash.substring(1));
+    } else {
+      this.updateLocation("");
+    }
+
+    window.addEventListener("popstate", (event) => {
+      this.setState(event.state);
+    });
+  }
+
+  updateLocation(newLocation: string): void {
+    let verifiedItem: Folder | Sheet = sheets;
+    let verifiedLocation: string = "";
+
+    for (const character of newLocation) {
+      if (
+        verifiedItem.type === "folder" &&
+        verifiedItem.contents[character] !== undefined
+      ) {
+        verifiedItem = verifiedItem.contents[character];
+        verifiedLocation += character;
+      } else {
+        break;
+      }
+    }
+
+    this.setState({
+      location: verifiedLocation,
+      currentItem: verifiedItem,
+    });
+
+    let hash = "";
+
+    if (verifiedLocation !== "") {
+      hash = "#" + verifiedLocation;
+    }
+
+    if (this.state.location !== verifiedLocation) {
+      history.pushState(
+        {
+          location: verifiedLocation,
+          currentItem: verifiedItem,
+        },
+        "",
+        location.origin + location.pathname + hash
+      );
+    } else {
+      history.replaceState(
+        {
+          location: verifiedLocation,
+          currentItem: verifiedItem,
+        },
+        "",
+        location.origin + location.pathname + hash
+      );
+    }
+  }
+
+  render(): React.ReactNode {
+    return (
+      <React.Fragment>
+        {this.state.currentItem.type === "folder" && (
+          <ListView
+            location={this.state.location}
+            updateLocation={(newLocation: string) =>
+              this.updateLocation(newLocation)
+            }
+            items={this.state.currentItem}
+          ></ListView>
+        )}
+        {this.state.currentItem.type === "sheet" && (
+          <SheetView
+            location={this.state.location}
+            updateLocation={(newLocation: string) =>
+              this.updateLocation(newLocation)
+            }
+            sheet={this.state.currentItem}
+          ></SheetView>
+        )}
+      </React.Fragment>
+    );
+  }
+}
 
 export default App;

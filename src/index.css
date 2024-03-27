@@ -1,39 +1,66 @@
-.text-bg-blue {
+ul {
+  margin-inline-start: 0;
+  padding-inline-start: 1.25em;
+}
+
+ol {
+  margin-inline-start: 0;
+  padding-inline-start: 1.5em;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+.katex-display,
+.katex {
+  text-align: left !important;
+}
+
+.no-list-style {
+  list-style-type: none;
+}
+
+.highlight-0 {
   background-color: color-mix(in srgb, #0d6efd 50%, white) !important;
 }
 
-.text-bg-indigo {
+.highlight-1 {
   background-color: color-mix(in srgb, #6610f2 50%, white) !important;
 }
 
-.text-bg-purple {
+.highlight-2 {
   background-color: color-mix(in srgb, #6f42c1 50%, white) !important;
 }
 
-.text-bg-pink {
+.highlight-3 {
   background-color: color-mix(in srgb, #d63384 50%, white) !important;
 }
 
-.text-bg-red {
+.highlight-4 {
   background-color: color-mix(in srgb, #dc3545 50%, white) !important;
 }
 
-.text-bg-orange {
+.highlight-5 {
   background-color: color-mix(in srgb, #fd7e14 50%, white) !important;
 }
 
-.text-bg-yellow {
+.highlight-6 {
   background-color: color-mix(in srgb, #ffc107 50%, white) !important;
 }
 
-.text-bg-green {
+.highlight-7 {
   background-color: color-mix(in srgb, #198754 50%, white) !important;
 }
 
-.text-bg-teal {
-  background-color: color-mix(in srgb, #20c997 50%, white);
+.highlight-8 {
+  background-color: color-mix(in srgb, #20c997 50%, white) !important;
 }
 
-.text-bg-cyan {
-  background-color: color-mix(in srgb, #0dcaf0 50%, white);
+.highlight-9 {
+  background-color: color-mix(in srgb, #0dcaf0 50%, white) !important;
 }
