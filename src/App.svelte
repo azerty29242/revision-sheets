@@ -5,12 +5,24 @@
 
   let currentLocation = "";
 
+  window.addEventListener("popstate", (event) => {
+    let state = event.state;
+
+    if (Object.hasOwn(state, "location")) {
+      currentLocation = state.location;
+    }
+  });
+
   function replaceHistoryState() {
     if (currentLocation === "") {
-      history.replaceState({}, "", location.origin + location.pathname);
+      history.replaceState(
+        { location: currentLocation },
+        "",
+        location.origin + location.pathname
+      );
     } else {
       history.replaceState(
-        {},
+        { location: currentLocation },
         "",
         location.origin + location.pathname + "#" + currentLocation
       );
@@ -21,10 +33,14 @@
 
   function pushHistoryState() {
     if (currentLocation === "") {
-      history.pushState({}, "", location.origin + location.pathname);
+      history.pushState(
+        { location: currentLocation },
+        "",
+        location.origin + location.pathname
+      );
     } else {
       history.pushState(
-        {},
+        { location: currentLocation },
         "",
         location.origin + location.pathname + "#" + currentLocation
       );
