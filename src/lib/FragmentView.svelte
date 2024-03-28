@@ -41,9 +41,17 @@
     <span class={fragment.color}>{fragment.text}</span>
   {/if}
 {:else if fragment.action === "&"}
-  <button on:click={() => alert(fragment.target)}>
-    <span class="text-blue-600">{fragment.text}</span>
-  </button>
+  <button bind:this={definedButton} on:click={handleDefinedButtonClick}>
+      <span class="text-blue-600">
+        {fragment.text}
+      </span></button
+    >
+    <Popover
+      title={fragment.text}
+      contents={fragment.target}
+      button={definedButton}
+      bind:display={handleDefinedButtonClick}
+    />
 {:else if fragment.action === "*"}
   <button on:click={() => updateLocation(fragment.target)}>
     <span class="text-blue-600 underline">
