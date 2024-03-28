@@ -1,6 +1,7 @@
 <script>
   import BackButton from "./lib/BackButton.svelte";
   import ListView from "./lib/ListView.svelte";
+  import SheetView from "./lib/SheetView.svelte";
   import sheets from "./lib/sheets.js";
 
   let currentLocation = "";
@@ -83,6 +84,6 @@
   {#if item.type === "folder"}
     <ListView {item} {updateLocation} />
   {:else}
-    <p>Sheet view</p>
+    <SheetView {item} {updateLocation} />
   {/if}
 </div>

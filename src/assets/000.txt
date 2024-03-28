@@ -1,0 +1,37 @@
+Example
+
+First section
+
+\A Text : \(x^2 + y^2 = z^2\)
+\A Text : \(x^2 + y^2 = z^2\)
+\A Text : \(x^2 + y^2 = z^2\)
+
+\U Text : \(x^2 + y^2 = z^2\)
+\U Text : \(x^2 + y^2 = z^2\)
+\U Text : \(x^2 + y^2 = z^2\)
+
+\O Text : \(x^2 + y^2 = z^2\)
+\O Text : \(x^2 + y^2 = z^2\)
+\O Text : \(x^2 + y^2 = z^2\)
+
+\T \begin{split} f(x) &= (x + \pi)^2
+\T &= (x + \pi)\sdot(x + \pi)
+\T &= x^2 + x \pi + \pi x + \pi^2
+\T &= x^2 + 2 x \pi + \pi^2 \end{split}
+
+Second section
+
+\A Normal text
+\A \0Highlighted 0\0, \1highlighted 1\1, \2highlighted 2\2, \3highlighted 3\3, \4highlighted 4\4, \5highlighted 5\5, \6highlighted 6\6, \7highlighted 7\7, \8highlighted 8\8, \9highlighted 9\9
+\A \0\&Defined 0\&\@definition 0\@\0, \1\&defined 1\&\@definition 1\@\1, \2\&defined 2\&\@definition 2\@\2, \3\&defined 3\&\@definition 3\@\3, \4\&defined 4\&\@definition 4\@\4, \5\&defined 5\&\@definition 5\@\5, \6\&defined 6\&\@definition 6\@\6, \7\&defined 7\&\@definition 7\@\7, \8\&defined 8\&\@definition 8\@\8, \9\&defined 9\&\@definition 9\@\9
+\A \0\*Link 0\*\@000\@\0, \1\*link 1\*\@000\@\1, \2\*link 2\*\@000\@\2, \3\*link 3\*\@000\@\3, \4\*link 4\*\@000\@\4, \5\*link 5\*\@000\@\5, \6\*link 6\*\@000\@\6, \7\*link 7\*\@000\@\7, \8\*link 8\*\@000\@\8, \9\*link 9\*\@000\@\9
+
+\U Normal text
+\U \0Highlighted 0\0, \1highlighted 1\1, \2highlighted 2\2, \3highlighted 3\3, \4highlighted 4\4, \5highlighted 5\5, \6highlighted 6\6, \7highlighted 7\7, \8highlighted 8\8, \9highlighted 9\9
+\U \0\&Defined 0\&\@Definition 0\@\0, \1\&defined 1\&\@Definition 1\@\1, \2\&defined 2\&\@Definition 2\@\2, \3\&defined 3\&\@Definition 3\@\3, \4\&defined 4\&\@Definition 4\@\4, \5\&defined 5\&\@Definition 5\@\5, \6\&defined 6\&\@Definition 6\@\6, \7\&defined 7\&\@Definition 7\@\7, \8\&defined 8\&\@Definition 8\@\8, \9\&defined 9\&\@Definition 9\@\9
+\U \0\*Link 0\*\@000\@\0, \1\*link 1\*\@000\@\1, \2\*link 2\*\@000\@\2, \3\*link 3\*\@000\@\3, \4\*link 4\*\@000\@\4, \5\*link 5\*\@000\@\5, \6\*link 6\*\@000\@\6, \7\*link 7\*\@000\@\7, \8\*link 8\*\@000\@\8, \9\*link 9\*\@000\@\9
+
+\O Normal text
+\O \0Highlighted 0\0, \1highlighted 1\1, \2highlighted 2\2, \3highlighted 3\3, \4highlighted 4\4, \5highlighted 5\5, \6highlighted 6\6, \7highlighted 7\7, \8highlighted 8\8, \9highlighted 9\9
+\O \0\&Defined 0\&\@Definition 0\@\0, \1\&defined 1\&\@Definition 1\@\1, \2\&defined 2\&\@Definition 2\@\2, \3\&defined 3\&\@Definition 3\@\3, \4\&defined 4\&\@Definition 4\@\4, \5\&defined 5\&\@Definition 5\@\5, \6\&defined 6\&\@Definition 6\@\6, \7\&defined 7\&\@Definition 7\@\7, \8\&defined 8\&\@Definition 8\@\8, \9\&defined 9\&\@Definition 9\@\9
+\O \0\*Link 0\*\@000\@\0, \1\*link 1\*\@000\@\1, \2\*link 2\*\@000\@\2, \3\*link 3\*\@000\@\3, \4\*link 4\*\@000\@\4, \5\*link 5\*\@000\@\5, \6\*link 6\*\@000\@\6, \7\*link 7\*\@000\@\7, \8\*link 8\*\@000\@\8, \9\*link 9\*\@000\@\9

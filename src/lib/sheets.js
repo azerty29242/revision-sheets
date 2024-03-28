@@ -7,6 +7,8 @@ import jpg5 from "../assets/5.jpg";
 import jpg6 from "../assets/6.jpg";
 import jpg7 from "../assets/7.jpg";
 
+import txt000 from "../assets/000.txt";
+
 const sheets = {
   "": {
     name: "Fiches de révision",
@@ -23,8 +25,12 @@ const sheets = {
   "00": {
     name: "Poésie",
     type: "folder",
-    subitems: [],
-    image: jpg0,
+    subitems: ["000"],
+  },
+  "000": {
+    name: "Exemple",
+    type: "sheet",
+    text: txt000,
   },
   1: {
     name: "Mathématiques",

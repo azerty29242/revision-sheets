@@ -12,7 +12,7 @@
 </script>
 
 <button
-  class="border px-4 py-2 rounded flex w-auto gap-4 mb-4"
+  class="border px-4 py-2 rounded flex w-auto gap-4 mb-4 print:hidden"
   on:click={goBack}
 >
   <svg
