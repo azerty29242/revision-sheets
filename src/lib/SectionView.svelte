@@ -1,5 +1,6 @@
 <script>
   import ParagraphView from "./ParagraphView.svelte";
+  import Popover from "./Popover.svelte";
 
   export let section;
   export let updateLocation;

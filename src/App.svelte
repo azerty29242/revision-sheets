@@ -54,9 +54,21 @@
    * @param {string} newLocation
    */
   function updateLocation(newLocation) {
-    currentLocation = newLocation;
+    let correctLocation = "";
 
-    pushHistoryState();
+    for (const letter of newLocation) {
+      if (Object.hasOwn(sheets, correctLocation + letter)) {
+        correctLocation += letter;
+      } else {
+        break;
+      }
+    }
+
+    if (correctLocation !== currentLocation) {
+      currentLocation = correctLocation;
+
+      pushHistoryState();
+    }
   }
 
   const hash = location.hash;

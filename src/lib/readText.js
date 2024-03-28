@@ -36,11 +36,16 @@ function readLine(text) {
 
   let colorModifiers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   let exceptionModifiers = ["[", "]", "(", ")"];
+  let actionModifiers = ["&", "*"];
+  let targetModifiers = ["@"];
 
   let isModifier = false;
 
   let currentText = "";
   let currentColor = "";
+
+  let currentAction = "";
+  let currentLabel = "";
 
   for (const letter of text) {
     if (isModifier) {
@@ -52,11 +57,40 @@ function readLine(text) {
           line.push({
             text: currentText,
             color: translateColor(currentColor),
+            action: "",
+            target: "",
           });
 
           currentText = "";
         }
         currentColor = currentColor === "" ? letter : "";
+      } else if (actionModifiers.includes(letter)) {
+        if (currentAction === "" && currentText !== "") {
+          line.push({
+            text: currentText,
+            color: translateColor(currentColor),
+            action: "",
+            target: "",
+          });
+        } else {
+          currentLabel = currentText;
+        }
+        currentAction = letter;
+
+        currentText = "";
+      } else if (targetModifiers.includes(letter)) {
+        if (currentText !== "") {
+          line.push({
+            text: currentLabel,
+            color: translateColor(currentColor),
+            action: currentAction,
+            target: currentText,
+          });
+
+          currentText = "";
+          currentAction = "";
+          currentLabel = "";
+        }
       }
 
       isModifier = false;
@@ -76,6 +110,8 @@ function readLine(text) {
     line.push({
       text: currentText,
       color: translateColor(currentColor),
+      action: "",
+      target: "",
     });
   }
 
@@ -103,6 +139,8 @@ function readParagraph(text) {
         {
           text: "\\[" + lines.join("\\\\ ") + "\\]",
           color: "",
+          action: "",
+          target: "",
         },
       ],
     ];
@@ -111,8 +149,6 @@ function readParagraph(text) {
       paragraph.lines.push(readLine(line));
     });
   }
-
-  console.log(paragraph);
 
   return paragraph;
 }

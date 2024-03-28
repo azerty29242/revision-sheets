@@ -1,12 +1,11 @@
 <script>
+  import FragmentView from "./FragmentView.svelte";
+  import Popover from "./Popover.svelte";
+
   export let fragments;
   export let updateLocation;
 </script>
 
 {#each fragments as fragment}
-  {#if fragment.color !== ""}
-    <span class={fragment.color}>{fragment.text}</span>
-  {:else}
-    <span>{fragment.text}</span>
-  {/if}
+  <FragmentView {fragment} {updateLocation} />
 {/each}
