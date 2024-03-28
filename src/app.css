@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  [aria-hidden="true"] {
-    @apply hidden;
-  }
-
   ul {
     @apply list-disc list-outside ms-4;
   }

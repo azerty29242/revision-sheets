@@ -15,6 +15,7 @@
         { left: "\\[", right: "\\]", display: true },
         { left: "\\(", right: "\\)", display: false },
       ],
+      output: "htmlAndMathml",
       throwOnError: false,
     });
   }
