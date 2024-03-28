@@ -1,28 +1,30 @@
+let definitionsCount;
+
 /**
  * @param {string} color
  */
 function translateColor(color) {
   switch (color) {
     case "0":
-      return "bg-red-300";
+      return "bg-red-300 print:bg-white print:text-red-600";
     case "1":
-      return "bg-orange-300";
+      return "bg-orange-300 print:bg-white print:text-orange-600";
     case "2":
-      return "bg-yellow-300";
+      return "bg-yellow-300 print:bg-white print:text-yellow-600";
     case "3":
-      return "bg-lime-300";
+      return "bg-lime-300 print:bg-white print:text-lime-600";
     case "4":
-      return "bg-green-300";
+      return "bg-green-300 print:bg-white print:text-green-600";
     case "5":
-      return "bg-teal-300";
+      return "bg-teal-300 print:bg-white print:text-teal-600";
     case "6":
-      return "bg-blue-300";
+      return "bg-blue-300 print:bg-white print:text-blue-600";
     case "7":
-      return "bg-violet-300";
+      return "bg-violet-300 print:bg-white print:text-violet-600";
     case "8":
-      return "bg-purple-300";
+      return "bg-purple-300 print:bg-white print:text-purple-600";
     case "9":
-      return "bg-pink-300";
+      return "bg-pink-300 print:bg-white print:text-pink-600";
     default:
       return "";
   }
@@ -36,7 +38,7 @@ function readLine(text) {
 
   let colorModifiers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   let exceptionModifiers = ["[", "]", "(", ")"];
-  let actionModifiers = ["&", "*"];
+  let actionModifiers = ["&", "*", "#"];
   let targetModifiers = ["@"];
 
   let isModifier = false;
@@ -85,6 +87,7 @@ function readLine(text) {
             color: translateColor(currentColor),
             action: currentAction,
             target: currentText,
+            reference: currentAction === "&" ? ++definitionsCount : 0,
           });
 
           currentText = "";
@@ -192,6 +195,8 @@ function readSection(text) {
  * @param {string} text
  */
 function readText(text) {
+  definitionsCount = 0;
+
   let sheet = {
     title: "",
     sections: [],

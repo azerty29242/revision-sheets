@@ -4,7 +4,7 @@
 
 - [x] Add definitions
 - [x] Add links
-- [ ] Add external links
-- [ ] Add support for superscripts
-- [ ] Add support for printing
+- [x] Add external links
+- [x] Add support for superscripts
+- [x] Add support for printing
 - [ ] Add exercises mode
