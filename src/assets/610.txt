@@ -1,0 +1,44 @@
+Caractères des individus & information génétique
+
+Introduction
+
+\A Des millions d’êtres vivants différents peuplent la Terre, c’est la biodiversité.
+\A Ils sont regroupés en espèces.
+\A Toutes les espèces présentent des caractères qui les différencient des autres espèces.
+
+I - Des hommes tous identiques et tous différents
+
+\A Les individus d’une espèce possèdent des \&caractères spécifiques\&\@Des caractères spécifiques sont des ca \@ mais il existe des variations individuelles pour certains \&caractères\&\@Toutes les espèces présentent des caractères qui les différencient des autres espèces\@. 
+\A Tous les êtres humains sont donc différents. L'ensemble des caractères visibles d’un individu constitue le phénotype.
+\A Certains caractères sont héréditaires c’est-à-dire transmis à la descendance.
+\A Des facteurs environnementaux peuvent intervenir dans le phénotype en modifiant certains caractères.
+\A Ces modifications ne sont pas instantanées, elles sont réversibles et non héréditaires.
+
+II - Origine des caractères héréditaires
+
+\A L’information génétique qui donnera tous les caractères d'un individu est contenue dans le noyau de la cellule-œuf;
+\A Par la suite, l'information génétique sera contenue dans le noyau de toutes les cellules de l’organisme.
+\A A un certain moment dans le noyau de la cellule on peut apercevoir des bâtonnets fixant fortement le colorant : \&les chromosomes\&\@Les chromosomes sont le support de l'information génétique. Ils sont formés de molecules d'ADN\@.
+
+III - Les informations fournies par les chromosomes d’une cellule
+
+\A Un caryotype est une présentation classée des chromosomes d’une cellule
+\A Toutes les cellules de l’espèce humaine possèdent 23 paires de chromosomes (il y a des exceptions), 
+\A La 23<sup>ème</sup> paire est la paire de chromosomes sexuels. 
+\A Ils sont de même taille et appelé XX chez la femme, de taille différentes et appelé XY chez l’homme
+
+\A Un nombre anormal de chromosomes empêche le développement de l’embryon ou entraîne des caractères différents chez l’individu concerné.
+\A On parle de trisomie ou de monosomie et souvent on fait suivre le numéro de la paire.
+\A Exemple : le syndrome de Down ou trisomie 21.
+
+IV. L’origine de la diversité génétique des individus
+
+\A Chaque chromosome contient de nombreux gènes.
+\A Chaque gène est porteur d’une information génétique qui commande l'expression d’un caractère héréditaire.
+\A Les deux chromosomes d'une même paire portent les mêmes gènes aux mêmes endroits, on a donc deux exemplaires de chaque gène sauf pour la paire de chromosomes sexuels chez le garçon.
+\A Chaque gène peut avoir des versions différentes appelées allèles. Un individu possède 2 allèles pour chaque gène. Il existe 2 possibilités.
+\A L'ensemble des gènes inscrits sur les chromosomes correspond au génotype. C'est le plan de construction de l'ensemble des caractères de notre corps, le phénotype.
+\A Une modification du génotype provoque un changement du phénotype.
+
+\A Certaines maladies génétiques sont dues à des gènes altérés, exemple : la mucoviscidose, le daltonisme, ....
+\A Certaines de ces maladies sont plus fréquentes chez les garçons (quand le gène impliqué est sur la partie haute du X puisque les garçons possèdent un seul chromosome X).

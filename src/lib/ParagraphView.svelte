@@ -40,9 +40,9 @@
 {:else}
   <p>
     {#each paragraph.lines as line}
-      <li class="list-none" use:renderKatex>
+      <span class="list-none" use:renderKatex>
         <LineView fragments={line} {updateLocation} />
-      </li>
+      </span>
     {/each}
   </p>
 {/if}

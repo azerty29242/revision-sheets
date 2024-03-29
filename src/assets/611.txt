@@ -1,0 +1,79 @@
+Origine de la diversité génétique des individus
+
+I. La transmission de l'information génétique de cellule en cellule.
+\A 1 De la cellule-œuf à l'organisme
+\A A partir d'une cellule-unique, un adulte possède des milliards de cellules qui renferment
+\A toutes un noyau possédant le même nombre de chromosomes (à l'exception des cellules
+\A reproductrices, ovules et spermatozoïdes)
+\A Attention même à l'âge adulte les mitoses se poursuivent (une cellule de peau se renouvelle au bout de 4 semaines et 1 cm2 de peau
+\A contient environ 500 000 cellules (livre page 248)
+\A 2 Le matériel génétique au cours de la division cellulaire
+\A Vidéo mitose : https://youtu.be/-QRgofKbvbQ
+\A La multiplication permet de conserver le même caryotype dans chaque cellule porte le nom
+\A de mitose.
+\A Les chromosomes simples brins doublent leur quantité d'ADN = chromosomes doubles. Puis,
+\A lorsque les cellules se coupent, chaque chromosome double se scinde pour reformer des
+\A chromosomes simples dans chaque cellule fille.
+\A 3 Le cancer
+\A Un cancer, c'est une multiplication incontrôlée de certaines cellules sous l'effet d'agents
+\A mutagènes (mutation de l'ADN), ces nouvelles cellules forment alors des amas cellulaires :
+\A les tumeurs. Elles peuvent envahir d'autres organes qui seront alors progressivement
+\A détruits = ce sont les métastases.
+\A Voir Axolotl, Exemple du Mélanome = le cancer de la peau. Les rayons UV du soleil abîment l'ADN
+\A (donc les gènes) de cellules. Celles-ci vont se diviser de façon anormale. Tumeurs peuvent envahir
+\A d'autres tissus.
+\A 4 Soigner avec de nouvelles cellules
+\A Les cellules souches (cellules non spécialisées) peuvent donner naissance à
+\A tous les types de cellules de notre corps : peau, cœur, muscles… Les
+\A promesses de guérison sont immenses toutefois l'utilisation de ces cellules
+\A peut être sujet à controverse (ex : clonage thérapeutique).
+II. La transmission de l'information génétique de génération en génération
+\A 1. Le caryotype des gamètes
+\A Les gamètes possèdent la moitié du nombre des chromosomes de l'espèce (un chromosome
+\A de chaque paire).
+\A Les spermatozoïdes ont 22 chromosomes et un chromosome sexuel (un X ou un Y) ;
+\A Les ovules, avec 22 chromosomes et un chromosome sexuel (forcément un X).
+\A Comment obtenir la moitié des chromosomes ?
+\A 1. La formation des gamètes
+\A Poly 5 formation des gamètes
+\A Poly 6 formation des gamètes groupe sanguin
+\A Poly 6cours formation des gamètes
+\A La formation des ovules (dans les ovaires) et des spermatozoïdes (dans les testicules) se
+\A déroule à partir de cellules à 46 chromosomes.
+\A Une division particulière (la méiose) permet d'obtenir des cellules reproductrices à 23 chro-
+\A mosomes, soit 1 chromosome par paire : c'est la méiose.
+\A La répartition des chromosomes se faisant au hasard dans chaque cellule reproductrice, la
+\A méiose* assure donc un brassage de leurs gènes. Au final, les gamètes* produits présentent
+\A une grande diversité génétique.
+\A Les généticiens ont ainsi calculé qu'un être humain, quel que soit son sexe, peut produire plus de 8 millions de gamètes génétiquement
+\A différents, à partir de ses cellules-souches à 23 paires de chromosomes.)
+\A MEIOSE (une) : suite de 2 divisions cellulaires qui aboutit à la formation de gamètes contenant 2 fois moins de chromosomes que les
+\A cellules-mères.
+\A GAMETE (un) : cellule reproductrice (gamète mâle : spermatozoïde (un) ; gamète femelle : ovule (un)). Ils ne possèdent que 23 chromosomes
+\A (un seul chromosome de chaque paire)
+\A 1ère partie de l'exercice
+\A 2. La fécondation, deuxième niveau d'intervention du hasard
+\A Remarque
+\A L'Homme possédant 23 paires de chromosomes, un individu, homme ou femme, peut donc produire potentiellement 223 = 8 388 614 ga-
+\A mètes génétiquement différents.
+\A Le loto de la fécondation
+\A La fécondation, c'est la rencontre d'un spermatozoïde parmi 8 388 614 possibles et d'un ovule parmi 8 388 614 possibles soit 8,4. 106 x 8,4.
+\A 106 = 70,5.1012 = 70 500 milliards de possibilités.
+\A Vous êtes le résultat d'un double hasard (pendant la méiose et pendant la fécondation) parmi 70 mille milliards de possibilités.
+\A Remarque un couple peut produire plus de 70 000 milliards de cellules-œufs différentes.
+\A Poly 7
+\A La fécondation unit au hasard un spermatozoïde et d'un ovule à 23 chromosomes chacun, ce qui
+\A aboutit à la formation d'une cellule-œuf à 23 paires de chromosomes : le nombre de chromosomes
+\A de l'espèce humaine est ainsi conservé.
+\A Pour chaque paire de chromosomes, un chromosome vient du père et l'autre de la mère : ainsi
+\A chaque couple d'allèles de la cellule-œuf, l'un vient du père l'autre de la mère.
+\A En réunissant les gamètes au hasard, la fécondation assure un nouveau brassage des allèles. Au final,
+\A chaque individu a un génotype unique.
+\A Remarque : vrais et faux jumeaux
+\A 3. Remarque : vrais et faux jumeaux
+\A 4. Origine des anomalies chromosomiques
+\A Anomalie au niveau des chromosomes (ex trisomie)
+\A L'un des gamètes (ovule ou spermatozoïde) possède un chromosome en plus (erreur lors de
+\A la division), conséquence le caryotype du fœtus et donc de l'enfant possède en chromosome
+\A en plus ou en moins.
+\A Anomalie au niveau des gènes (voir consultation génétique)

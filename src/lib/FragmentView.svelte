@@ -10,7 +10,11 @@
 
 {#if fragment.color !== ""}
   {#if fragment.action === "&"}
-    <button bind:this={definedButton} on:click={handleDefinedButtonClick}>
+    <button
+      class="select-text"
+      bind:this={definedButton}
+      on:click={handleDefinedButtonClick}
+    >
       <span class={fragment.color + " print:hidden text-blue-600"}>
         {@html fragment.text}
       </span></button
@@ -25,7 +29,10 @@
       bind:display={handleDefinedButtonClick}
     />
   {:else if fragment.action === "*"}
-    <button on:click={() => updateLocation(fragment.target)}>
+    <button
+      class="select-text"
+      on:click={() => updateLocation(fragment.target)}
+    >
       <span
         class={fragment.color +
           " text-blue-600 underline print:text-black print:no-underline"}
@@ -46,7 +53,11 @@
     <span class={fragment.color}>{@html fragment.text}</span>
   {/if}
 {:else if fragment.action === "&"}
-  <button bind:this={definedButton} on:click={handleDefinedButtonClick}>
+  <button
+    class="select-text"
+    bind:this={definedButton}
+    on:click={handleDefinedButtonClick}
+  >
     <span class="print:hidden text-blue-600 print:text-black">
       {@html fragment.text}
     </span></button
@@ -61,7 +72,7 @@
     bind:display={handleDefinedButtonClick}
   />
 {:else if fragment.action === "*"}
-  <button on:click={() => updateLocation(fragment.target)}>
+  <button class="select-text" on:click={() => updateLocation(fragment.target)}>
     <span class="text-blue-600 underline print:text-black print:no-underline">
       {@html fragment.text}
     </span></button

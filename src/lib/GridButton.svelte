@@ -18,6 +18,8 @@
     <ImagePlaceholder />
   {/if}
   <div class="px-2 flex justify-center items-center h-12">
-    <span class="font-bold">{item.name}</span>
+    <span class="font-bold max-w-full max-h-full overflow-hidden"
+      >{item.name}</span
+    >
   </div>
 </button>
